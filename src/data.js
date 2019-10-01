@@ -11,7 +11,7 @@ let data = [
                 id: 10,
                 restaurant: "Burger King",
                 image: "/images/burger_small.jpg",
-                name: "Patty Melt 2.0",
+                name: "Dish 0",
                 rating: 5,
                 reviews: [
                     {
@@ -38,7 +38,7 @@ let data = [
                 id: 11,
                 restaurant: "Burger King",
                 image: "/images/burger1.jpg",
-                name: "Cheeseburger",
+                name: "Dish 1",
                 rating: 5,
                 reviews: [
                     {
@@ -65,7 +65,7 @@ let data = [
                 id: 12,
                 restaurant: "Burger King",
                 image: "/images/burger2.jpg",
-                name: "Bacon Western",
+                name: "Dish 2",
                 rating: 5,
                 reviews: [
                     {
@@ -92,7 +92,7 @@ let data = [
                 id: 13,
                 restaurant: "Burger King",
                 image: "/images/burger3.jpg",
-                name: "Fried Calamari Burger",
+                name: "Dish 3",
                 rating: 5,
                 reviews: [
                     {
@@ -119,7 +119,7 @@ let data = [
                 id: 14,
                 restaurant: "Burger King",
                 image: "/images/burger4.jpg",
-                name: "Whopper McDouble",
+                name: "Dish 4",
                 rating: 5,
                 reviews: [
                     {
@@ -146,7 +146,7 @@ let data = [
                 id: 15,
                 restaurant: "Burger King",
                 image: "/images/burger5.jpg",
-                name: "Grilled Cheese Mushroom Sandwich",
+                name: "Dish 5",
                 rating: 5,
                 reviews: [
                     {
@@ -173,7 +173,7 @@ let data = [
                 id: 19,
                 restaurant: "Burger King",
                 image: "/images/burger6.jpg",
-                name: "Triple Mcdobule",
+                name: "Dish 6",
                 rating: 5,
                 reviews: [
                     {
@@ -200,7 +200,7 @@ let data = [
                 id: 20,
                 restaurant: "Burger King",
                 image: "/images/burger7.jpg",
-                name: "Heartstopper Whopper",
+                name: "Dish 7",
                 rating: 5,
                 reviews: [
                     {
@@ -227,7 +227,7 @@ let data = [
                 id: 21,
                 restaurant: "Burger King",
                 image: "/images/burger8.jpg",
-                name: "BBQ Western",
+                name: "Dish 8",
                 rating: 5,
                 reviews: [
                     {

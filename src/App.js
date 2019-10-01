@@ -1,13 +1,15 @@
 import React from "react";
+
 //plugins
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+
 //components
-import Home from "./Home";
-import RestaurantPage from "./RestaurantPage";
-import RestaurantMenuPage from "./RestaurantMenuPage";
+import Home from "./components/Home";
+import RestaurantPage from "./components/RestaurantPage";
+import RestaurantMenuPage from "./components/RestaurantMenuPage";
 import { RestaurantProvider } from "./RestaurantContext";
-import DishPage from "./DishPage";
-import Nav from "./Nav";
+import DishPage from "./components/DishPage";
+import Nav from "./components/Nav";
 
 function App() {
     return (

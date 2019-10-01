@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { RestaurantContext } from "./RestaurantContext";
+import { RestaurantContext } from "../RestaurantContext";
 import { Link } from "react-router-dom";
 
 function Home(props) {
