@@ -15,22 +15,51 @@ let data = [
                 rating: 5,
                 reviews: [
                     {
-                        id: 101,
-                        author_id: 1001,
-                        rating: 3,
-                        description: "I love steak but this was subpar for sure"
+                        id: 1,
+                        author_id: 23123,
+                        author: "Blake Griffin",
+                        description:
+                            "Loved it loved it loved it! This was the best food I've had in decades. Great!",
+                        rating: 5
                     },
                     {
-                        id: 102,
-                        author_id: 1002,
+                        id: 2,
+                        author_id: 23123,
+                        author: "Hubert Cumberdale",
+                        description:
+                            "This food was alright..kind of smelly, actually not that big of a fan oh well.",
+                        rating: 3
+                    },
+                    {
+                        id: 3,
+                        author_id: 23123,
+                        author: "Carl Swan",
                         rating: 4,
-                        description: "Incredible meal what a treat this was!"
+                        description:
+                            "Absolutely incredibly this food amazing! four stars in my book I will be returning"
                     },
                     {
-                        id: 103,
-                        author_id: 1003,
-                        rating: 5,
-                        description: "Probably the best food ever!"
+                        id: 4,
+                        author_id: 23123,
+                        author: "Courage Marley",
+                        rating: 3,
+                        description: "Yah man I totally dig it.."
+                    },
+                    {
+                        id: 5,
+                        author_id: 23123,
+                        author: "Jake Morice",
+                        rating: 2,
+                        description:
+                            "It's not just bad, its sad. This food was actually sad. I can't sleep at night thanks to this joint."
+                    },
+                    {
+                        id: 6,
+                        author_id: 23123,
+                        author: "Charlie Brown",
+                        rating: 1,
+                        description:
+                            "Realy let down here, its been a week and the taste has yet to leave my mouth what a disgrace of a company"
                     }
                 ]
             },

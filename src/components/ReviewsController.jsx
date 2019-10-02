@@ -1,20 +1,136 @@
 import React, { useState, useEffect } from "react";
+import UserReview from "./UserReview";
 
 const ReviewsController = ({ reviews }) => {
     const [reviewsProps, setReviewsProps] = useState(reviews);
-
-    console.log(reviewsProps);
+    const [activeItem, setActiveItem] = useState("highest");
 
     //rerenders ui to display props when props change
     useEffect(() => {
         setReviewsProps(reviews);
     }, [reviews]);
 
+    const handleActiveItemClick = e => {
+        e.preventDefault();
+        setActiveItem(e.target.name);
+    };
+
+    const orderReviews = (arr, order) => {
+        switch (order) {
+            case "highest":
+                let highestOrd = arr.sort((a, b) => {
+                    return a.rating < b.rating ? 1 : -1;
+                });
+                return highestOrd;
+
+            case "lowest":
+                let lowestOrd = arr.sort((a, b) => {
+                    return a.rating > b.rating ? 1 : -1;
+                });
+
+                return lowestOrd;
+            default:
+                console.log("error no order supplied to sort by");
+        }
+    };
+
+    const reviewsGenerator = sortType => {
+        let orderedReviews = orderReviews(reviews, sortType);
+
+        switch (sortType) {
+            case "highest":
+                return (
+                    <>
+                        {orderedReviews.map(review => {
+                            return (
+                                <UserReview
+                                    starCount={review.rating}
+                                    review={review.description}
+                                    author={review.author}
+                                    key={review.id}
+                                />
+                            );
+                        })}
+                    </>
+                );
+
+            case "lowest":
+                return (
+                    <>
+                        {orderedReviews.map(review => {
+                            return (
+                                <UserReview
+                                    starCount={review.rating}
+                                    review={review.description}
+                                    author={review.author}
+                                    key={review.id}
+                                />
+                            );
+                        })}
+                    </>
+                );
+
+            case "recent":
+                console.log("recent");
+                break;
+            case "trusted":
+                console.log("trusted");
+                break;
+            default:
+                return (
+                    <>
+                        {reviews.map(review => {
+                            return (
+                                <UserReview
+                                    starCount={review.rating}
+                                    review={review.review}
+                                    author={review.author}
+                                    key={review.id}
+                                />
+                            );
+                        })}
+                    </>
+                );
+        }
+    };
+
     return (
         <>
-            {reviewsProps.map(review => (
-                <h1>{review.description}</h1>
-            ))}
+            <div>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        border: "1px solid red"
+                    }}
+                >
+                    <h2>Sort By:</h2>
+                    <button
+                        name="highest"
+                        onClick={handleActiveItemClick}
+                        style={{
+                            padding: "0 1%",
+                            textDecoration: "underline"
+                        }}
+                    >
+                        highest
+                    </button>
+
+                    <button
+                        name="lowest"
+                        style={{
+                            textDecoration: "underline"
+                        }}
+                        onClick={handleActiveItemClick}
+                    >
+                        lowest
+                    </button>
+                </div>
+
+                <div>
+                    <div>{reviewsGenerator(activeItem)}</div>
+                </div>
+            </div>
         </>
     );
 };

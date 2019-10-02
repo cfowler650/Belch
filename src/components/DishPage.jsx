@@ -44,22 +44,7 @@ function DishPage({ match }) {
                 <img src={thisDish.image} />
             </div>
 
-            <div>
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        border: "1px solid red"
-                    }}
-                >
-                    <h2>Sort By:</h2>{" "}
-                    <h2 style={{ padding: "0 2%" }}>highest</h2> <h2>lowest</h2>
-                </div>
-
-                <div>
-                    <ReviewsController reviews={thisDish.reviews} />
-                </div>
-            </div>
+            <ReviewsController reviews={thisDish.reviews} />
         </div>
     );
 }
