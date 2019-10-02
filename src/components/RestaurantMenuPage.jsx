@@ -16,7 +16,7 @@ function RestaurantMenuPage({ match }) {
             <div>
                 {dishes.map(dish => (
                     <Link to={`${match.url}/${dish.id}`}>
-                        <h1>{dish.name}</h1>
+                        <h2>{dish.name}</h2>
                     </Link>
                 ))}
             </div>

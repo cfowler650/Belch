@@ -6,7 +6,11 @@ const GlobalStyle = createGlobalStyle`
  }
 
  body {
+    font-family: 'Hind';
+ }
 
+ h1 {
+     font-family: 'Mansalva'
  }
 `;
 
