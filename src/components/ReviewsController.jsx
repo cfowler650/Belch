@@ -93,8 +93,7 @@ const ReviewsController = ({ reviews }) => {
                 <div
                     style={{
                         display: "flex",
-                        justifyContent: "center",
-                        border: "1px solid red"
+                        justifyContent: "center"
                     }}
                 >
                     <h2>Sort By:</h2>

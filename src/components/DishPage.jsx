@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
 import { RestaurantContext } from "../RestaurantContext";
+import { Link } from "react-router-dom";
 import ReviewsController from "./ReviewsController";
 
-function DishPage({ match }) {
+function DishPage({ match, history }) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
 
     let selectedDishId = parseInt(match.params.dishId);
@@ -32,19 +33,22 @@ function DishPage({ match }) {
         }
     };
 
+    const handleReturnToMenu = () => {
+        history.goBack();
+    };
+
     let thisDish = menu[currentDishIndex];
 
     return (
         <div style={{ textAlign: "center" }}>
+            <button onClick={handleReturnToMenu}>Return To Menu</button>
             <button onClick={prevDish}>Prev Dish</button>
             <button onClick={nextDish}>Next Dish</button>
-
             <div>
                 <h1>{thisDish.name}</h1>
                 <img src={thisDish.image} />
             </div>
-
-            <ReviewsController reviews={thisDish.reviews} />
+            <ReviewsController reviews={thisDish.reviews} />\
         </div>
     );
 }
