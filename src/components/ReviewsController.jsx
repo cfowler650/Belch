@@ -69,13 +69,6 @@ const ReviewsController = ({ reviews }) => {
                         })}
                     </>
                 );
-
-            case "recent":
-                console.log("recent");
-                break;
-            case "trusted":
-                console.log("trusted");
-                break;
             default:
                 return (
                     <>
