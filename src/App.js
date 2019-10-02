@@ -10,6 +10,7 @@ import RestaurantMenuPage from "./components/RestaurantMenuPage";
 import { RestaurantProvider } from "./RestaurantContext";
 import DishPage from "./components/DishPage";
 import Nav from "./components/Nav";
+import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                     </Switch>
                 </div>
             </RestaurantProvider>
+            <GlobalStyle />
         </Router>
     );
 }

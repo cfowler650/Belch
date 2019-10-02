@@ -45,7 +45,7 @@ let data = [
                         id: 111,
                         author_id: 1011,
                         rating: 3,
-                        description: "I love steak but this was subpar for sure"
+                        description: "I love steak grand lio"
                     },
                     {
                         id: 112,

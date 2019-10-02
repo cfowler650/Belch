@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { RestaurantContext } from "../RestaurantContext";
+import ReviewsController from "./ReviewsController";
 
 function DishPage({ match }) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
@@ -31,14 +32,33 @@ function DishPage({ match }) {
         }
     };
 
+    let thisDish = menu[currentDishIndex];
+
     return (
         <div style={{ textAlign: "center" }}>
             <button onClick={prevDish}>Prev Dish</button>
             <button onClick={nextDish}>Next Dish</button>
 
             <div>
-                <h1>{menu[currentDishIndex].name}</h1>
-                <img src={menu[currentDishIndex].image} />
+                <h1>{thisDish.name}</h1>
+                <img src={thisDish.image} />
+            </div>
+
+            <div>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        border: "1px solid red"
+                    }}
+                >
+                    <h2>Sort By:</h2>{" "}
+                    <h2 style={{ padding: "0 2%" }}>highest</h2> <h2>lowest</h2>
+                </div>
+
+                <div>
+                    <ReviewsController reviews={thisDish.reviews} />
+                </div>
             </div>
         </div>
     );
