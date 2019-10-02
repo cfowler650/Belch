@@ -12,6 +12,7 @@ function RestaurantMenuPage({ match }) {
 
     return (
         <div style={{ textAlign: "center" }}>
+            <h1>{selectedRestaurant.name} Menu</h1>
             <div>
                 {dishes.map(dish => (
                     <Link to={`${match.url}/${dish.id}`}>

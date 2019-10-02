@@ -1,14 +1,5 @@
 import React from "react";
 
-const UserReview = ({ review, starCount }) => {
-    return (
-        <div>
-            {review}
-            <div>{starGenerator(starCount)}</div>
-        </div>
-    );
-};
-
 const starGenerator = rating => {
     let stars = [];
 
@@ -34,4 +25,14 @@ const starGenerator = rating => {
     );
 };
 
+const UserReview = ({ review, author, starCount }) => {
+    return (
+        <div>
+            <img src="https://react.semantic-ui.com/images/avatar/small/matthew.png" />
+            <span>{review}</span>
+            <span>{author}</span>
+            <div>{starGenerator(starCount)}</div>
+        </div>
+    );
+};
 export default UserReview;
