@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { RestaurantContext } from "../RestaurantContext";
 import { Link } from "react-router-dom";
 import ReviewsController from "./ReviewsController";
+import StyledDishPage from "../styles/StyledDishPage";
 
 function DishPage({ match, history }) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
@@ -40,16 +41,18 @@ function DishPage({ match, history }) {
     let thisDish = menu[currentDishIndex];
 
     return (
-        <div style={{ textAlign: "center" }}>
-            <button onClick={handleReturnToMenu}>Return To Menu</button>
-            <button onClick={prevDish}>Prev Dish</button>
-            <button onClick={nextDish}>Next Dish</button>
-            <div>
-                <h1>{thisDish.name}</h1>
-                <img src={thisDish.image} />
+        <StyledDishPage>
+            <div className="balls" style={{ textAlign: "center" }}>
+                <button onClick={handleReturnToMenu}>Return To Menu</button>
+                <button onClick={prevDish}>Prev Dish</button>
+                <button onClick={nextDish}>Next Dish</button>
+                <div>
+                    <h1>{thisDish.name}</h1>
+                    <img className="main-dish-image" src={thisDish.image} />
+                </div>
+                <ReviewsController reviews={thisDish.reviews} />\
             </div>
-            <ReviewsController reviews={thisDish.reviews} />\
-        </div>
+        </StyledDishPage>
     );
 }
 

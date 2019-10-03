@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 
  body {
     font-family: 'Hind';
+    //  background-color: lightsteelblue;
  }
 
  h1 {

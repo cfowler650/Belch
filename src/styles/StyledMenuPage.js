@@ -5,6 +5,14 @@ const StyledMenuPage = styled.div`
     overflow: hidden;
     color: black;
 
+    h1 {
+        font-size: 30px;
+        letter-spacing: -0.88px;
+        font-weight: 600;
+        line-height: normal;
+        opacity: 0.9;
+    }
+
     .menu-page-container {
         text-align: center;
         justify-content: center;
@@ -53,6 +61,7 @@ const StyledMenuPage = styled.div`
 
     .dish-detail {
         color: black;
+        // font-size: 16px;
         font-size: 16px;
         margin: 0.5vh;
         text-align: left;
@@ -61,6 +70,11 @@ const StyledMenuPage = styled.div`
     .dish-name-h2 {
         margin: 0px;
         padding: 0px;
+        font-size: 21px;
+        letter-spacing: -0.88px;
+        font-weight: 600;
+        line-height: normal;
+        opacity: 0.9;
     }
 
     a {
@@ -68,7 +82,28 @@ const StyledMenuPage = styled.div`
         margin: 0px;
     }
 
-    @media screen and (max-width: 1400px) {
+    @media only screen and (max-width: 420px) {
+
+
+            .dish-image {
+                max-width: 150px;
+            }
+
+            .dish-card {
+                width: 80%;
+            }
+
+            .dish-detail {
+
+                font-size: 12px;
+
+            }
+
+            .dish-name-h2 {
+                font-size: 16px;
+
+            }
+        }
     }
 `;
 export default StyledMenuPage;
