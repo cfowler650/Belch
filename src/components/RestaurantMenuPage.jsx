@@ -11,14 +11,14 @@ function RestaurantMenuPage({ match }) {
     );
 
     let dishes = selectedRestaurant.menuItems;
-    let balls = 0;
-    let sum = []; // this holds the sum of
+    let currentRatingSum = 0;
+    let sum = []; // this holds the sum of each dishes total reviews as seperate elements in array dish 0 rating sum = sum[0]
 
     const starAvgGenerator = rating => {
         let stars = [];
 
         let array = rating => {
-            for (var i = 0; i < rating; i += 1) stars.push("fa fa-star");
+            for (var i = 0; i < rating; i += 1) stars.push("fa fa-star fa-lg");
         };
 
         array(rating);
@@ -31,6 +31,11 @@ function RestaurantMenuPage({ match }) {
                             className={star}
                             aria-hidden="true"
                             style={{ margin: 0 }}
+                            style={{
+                                paddingTop: "0.5vh",
+                                color: "gold",
+                                border: "1px solid black"
+                            }}
                         />
                     );
                 })}
@@ -46,7 +51,7 @@ function RestaurantMenuPage({ match }) {
                     <div className="dishes-container">
                         {dishes.map((dish, index) => (
                             <div className="dish-card">
-                                {(balls = 0)}
+                                {(currentRatingSum = 0)}
                                 <img className="dish-image" src={dish.image} />
                                 <div className="dish-name-div">
                                     <Link to={`${match.url}/${dish.id}`}>
@@ -59,17 +64,40 @@ function RestaurantMenuPage({ match }) {
                                     </p>
                                     <p style={{ display: "none" }}>
                                         {dish.reviews.forEach(
-                                            review => (balls += review.rating)
+                                            review =>
+                                                (currentRatingSum +=
+                                                    review.rating)
                                         )}
                                     </p>
                                 </div>
                                 <p style={{ display: "none" }}>
                                     {sum.push(
-                                        Math.floor(balls / dish.reviews.length)
+                                        Math.floor(
+                                            currentRatingSum /
+                                                dish.reviews.length
+                                        )
                                     )}
                                 </p>
-
-                                {starAvgGenerator(sum[index])}
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "space-evenly",
+                                        border: "1px solid red",
+                                        width: "500px"
+                                    }}
+                                >
+                                    <div style={{ display: "flex" }}>
+                                        {starAvgGenerator(sum[index])}{" "}
+                                        <h3
+                                            style={{
+                                                margin: 0,
+                                                padding: "0 1vh"
+                                            }}
+                                        >
+                                            / {dish.reviews.length}
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>

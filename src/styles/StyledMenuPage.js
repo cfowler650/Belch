@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledMenuPage = styled.div`
     display: flex;
     overflow: hidden;
-    color: red;
+    color: blue;
 
     .menu-page-container {
         text-align: center;
@@ -26,9 +26,11 @@ const StyledMenuPage = styled.div`
 
     .dish-card {
         display: flex;
-        width: 70%;
+        width: 50%;
         border: 4px solid seagreen;
         margin: 2vh;
+        flex-direction: column;
+        align-items: center;
     }
 
     .dish-image {

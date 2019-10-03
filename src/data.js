@@ -59,7 +59,7 @@ let data = [
                         id: 6,
                         author_id: 23123,
                         author: "Charlie Brown",
-                        rating: 6,
+                        rating: 4,
                         description:
                             "Realy let down here, its been a week and the taste has yet to leave my mouth what a disgrace of a company"
                     }
@@ -90,8 +90,24 @@ let data = [
                         id: 113,
                         author_id: 1013,
                         author: "Hubert Cumberdale",
-                        rating: 5,
+                        rating: 2,
                         description: "Probably the best food ever!"
+                    },
+                    {
+                        id: 1002,
+                        author_id: 23123333,
+                        author: "Charlise Brown",
+                        rating: 5,
+                        description:
+                            "Realy let down here, its been a week and the taste has yet to leave my mouth what a disgrace of a company"
+                    },
+                    {
+                        id: 62323,
+                        author_id: 23123,
+                        author: "Carmen Crow",
+                        rating: 1,
+                        description:
+                            "Realy let down here, its been a week and the taste has yet to leave my mouth what a disgrace of a company"
                     }
                 ]
             },
