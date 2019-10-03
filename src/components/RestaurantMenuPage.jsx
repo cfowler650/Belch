@@ -11,7 +11,7 @@ function RestaurantMenuPage({ match }) {
     );
 
     let dishes = selectedRestaurant.menuItems;
-    let currentRatingSum = 0;
+    let currentSum = 0; //current rating sum for each iteration of map
     let sum = []; // this holds the sum of each dishes total reviews as seperate elements in array dish 0 rating sum = sum[0]
 
     const starAvgGenerator = rating => {
@@ -33,8 +33,8 @@ function RestaurantMenuPage({ match }) {
                             style={{ margin: 0 }}
                             style={{
                                 paddingTop: "0.5vh",
-                                color: "gold",
-                                border: "1px solid black"
+                                color: "gold"
+                                // border: "1px solid black"
                             }}
                         />
                     );
@@ -51,7 +51,9 @@ function RestaurantMenuPage({ match }) {
                     <div className="dishes-container">
                         {dishes.map((dish, index) => (
                             <div className="dish-card">
-                                {(currentRatingSum = 0)}
+                                <p style={{ display: "none" }}>
+                                    {(currentSum = 0)}
+                                </p>
                                 <img className="dish-image" src={dish.image} />
                                 <div className="dish-name-div">
                                     <Link to={`${match.url}/${dish.id}`}>
@@ -65,16 +67,14 @@ function RestaurantMenuPage({ match }) {
                                     <p style={{ display: "none" }}>
                                         {dish.reviews.forEach(
                                             review =>
-                                                (currentRatingSum +=
-                                                    review.rating)
+                                                (currentSum += review.rating)
                                         )}
                                     </p>
                                 </div>
                                 <p style={{ display: "none" }}>
                                     {sum.push(
                                         Math.floor(
-                                            currentRatingSum /
-                                                dish.reviews.length
+                                            currentSum / dish.reviews.length
                                         )
                                     )}
                                 </p>
@@ -82,7 +82,7 @@ function RestaurantMenuPage({ match }) {
                                     style={{
                                         display: "flex",
                                         justifyContent: "space-evenly",
-                                        border: "1px solid red",
+                                        // border: "1px solid red",
                                         width: "500px"
                                     }}
                                 >

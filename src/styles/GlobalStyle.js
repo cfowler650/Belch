@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
  }
 
  h1 {
-     font-family: 'Mansalva'
+     font-family: 'Hind'
  }
 
 

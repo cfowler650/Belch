@@ -3,22 +3,22 @@ import styled from "styled-components";
 const StyledMenuPage = styled.div`
     display: flex;
     overflow: hidden;
-    color: blue;
+    color: black;
 
     .menu-page-container {
         text-align: center;
         justify-content: center;
         width: 100%;
         margin: 2%;
-        border: 2px solid blue;
+        // border: 2px solid blue;
     }
 
     .menu-page-child-1 {
-        border: 1px solid red;
+        // border: 1px solid red;
     }
 
     .dishes-container {
-        border: 2px solid darkgrey;
+        // border: 2px solid darkgrey;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -27,10 +27,14 @@ const StyledMenuPage = styled.div`
     .dish-card {
         display: flex;
         width: 50%;
-        border: 4px solid seagreen;
+
         margin: 2vh;
         flex-direction: column;
         align-items: center;
+        background-color: white;
+        // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 1px #ffffff inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+        border-radius: 0.5%;
     }
 
     .dish-image {
@@ -40,7 +44,7 @@ const StyledMenuPage = styled.div`
     .dish-name-div {
         display: flex;
         padding: 0 2vh;
-        border: 1px solid blue;
+        // border: 1px solid blue;
         width: 100%;
         flex-direction: column;
         justify-content: center;

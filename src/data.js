@@ -13,8 +13,8 @@ let data = [
                 image: "/images/burger_small.jpg",
                 name: "Dish 0",
                 rating: 5,
-                details:
-                    "This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house. Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese",
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 1,
@@ -71,6 +71,8 @@ let data = [
                 image: "/images/burger1.jpg",
                 name: "Dish 1",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 111,
@@ -117,6 +119,8 @@ let data = [
                 image: "/images/burger2.jpg",
                 name: "Dish 2",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 121,
@@ -147,6 +151,8 @@ let data = [
                 image: "/images/burger3.jpg",
                 name: "Dish 3",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 131,
@@ -177,6 +183,8 @@ let data = [
                 image: "/images/burger4.jpg",
                 name: "Dish 4",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 141,
@@ -207,6 +215,8 @@ let data = [
                 image: "/images/burger5.jpg",
                 name: "Dish 5",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 151,
@@ -237,6 +247,8 @@ let data = [
                 image: "/images/burger6.jpg",
                 name: "Dish 6",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 22,
@@ -267,6 +279,8 @@ let data = [
                 image: "/images/burger7.jpg",
                 name: "Dish 7",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 22,
@@ -295,6 +309,8 @@ let data = [
                 image: "/images/burger8.jpg",
                 name: "Dish 8",
                 rating: 5,
+                details: `This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house.
+                    Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese`,
                 reviews: [
                     {
                         id: 22,
