@@ -13,6 +13,8 @@ let data = [
                 image: "/images/burger_small.jpg",
                 name: "Dish 0",
                 rating: 5,
+                details:
+                    "This burger is a whopping 5lbs, tomato, lettuce, grilled onion, pickled shallots, and to top it all off a delicious home made ciabatta baked fresh every morning in house. Enjoy this burger with a side of fries on the house. Dont forget the delicious melted swiss cheese",
                 reviews: [
                     {
                         id: 1,
@@ -20,7 +22,7 @@ let data = [
                         author: "Blake Griffin",
                         description:
                             "Loved it loved it loved it! This was the best food I've had in decades. Great!",
-                        rating: 5
+                        rating: 1
                     },
                     {
                         id: 2,
@@ -28,13 +30,13 @@ let data = [
                         author: "Hubert Cumberdale",
                         description:
                             "This food was alright..kind of smelly, actually not that big of a fan oh well.",
-                        rating: 3
+                        rating: 2
                     },
                     {
                         id: 3,
                         author_id: 23123,
                         author: "Carl Swan",
-                        rating: 4,
+                        rating: 3,
                         description:
                             "Absolutely incredibly this food amazing! four stars in my book I will be returning"
                     },
@@ -42,14 +44,14 @@ let data = [
                         id: 4,
                         author_id: 23123,
                         author: "Courage Marley",
-                        rating: 3,
+                        rating: 4,
                         description: "Yah man I totally dig it.."
                     },
                     {
                         id: 5,
                         author_id: 23123,
                         author: "Jake Morice",
-                        rating: 2,
+                        rating: 5,
                         description:
                             "It's not just bad, its sad. This food was actually sad. I can't sleep at night thanks to this joint."
                     },
@@ -57,7 +59,7 @@ let data = [
                         id: 6,
                         author_id: 23123,
                         author: "Charlie Brown",
-                        rating: 1,
+                        rating: 6,
                         description:
                             "Realy let down here, its been a week and the taste has yet to leave my mouth what a disgrace of a company"
                     }

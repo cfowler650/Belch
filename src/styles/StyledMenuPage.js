@@ -26,7 +26,7 @@ const StyledMenuPage = styled.div`
 
     .dish-card {
         display: flex;
-        width: 50%;
+        width: 70%;
         border: 4px solid seagreen;
         margin: 2vh;
     }
@@ -40,7 +40,26 @@ const StyledMenuPage = styled.div`
         padding: 0 2vh;
         border: 1px solid blue;
         width: 100%;
+        flex-direction: column;
         justify-content: center;
+        max-height: 200px;
+    }
+
+    .dish-detail {
+        color: black;
+        font-size: 16px;
+        margin: 0.5vh;
+        text-align: left;
+    }
+
+    .dish-name-h2 {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    a {
+        padding: 0px;
+        margin: 0px;
     }
 
     @media screen and (max-width: 1400px) {
