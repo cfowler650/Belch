@@ -2,8 +2,6 @@ let data = [
     {
         id: 1,
         name: "Burger King",
-        distance: 10,
-        followers: 15,
         hours: "6am-5pm",
         image: "/images/burger.jpg",
         menuItems: [
@@ -338,8 +336,6 @@ let data = [
     {
         id: 2,
         name: "Arbys",
-        distance: "20 miles from you",
-        followers: "20",
         hours: "7am-6pm",
         image: "/images/arbys.jpg",
         menuItems: [
@@ -602,8 +598,6 @@ let data = [
     {
         id: 3,
         name: "Pizza Hut",
-        distance: "7 miles from you",
-        followers: "10",
         hours: "9am-7pm",
         image: "/images/pizza.jpg",
         menuItems: [
@@ -865,8 +859,6 @@ let data = [
     {
         id: 4, //react uses these id's as keys for identifying uniqueness
         name: "Dennys",
-        distance: "6 miles from you",
-        followers: "8",
         hours: "9am-9pm",
         image: "/images/eggs.jpg",
         menuItems: [

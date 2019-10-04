@@ -88,15 +88,10 @@ const ReviewsController = ({ reviews }) => {
     };
 
     return (
-        <>
-            <div className="reviewContainer" style={{ backgroundColor: "red" }}>
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "center"
-                    }}
-                >
-                    <h2>Sort By:</h2>
+        <div className="bottom-content-child">
+            <div className="sort-section-container">
+                <h2>Sort By:</h2>
+                <div className="sort-button-group">
                     <button
                         name="highest"
                         onClick={handleActiveItemClick}
@@ -118,12 +113,12 @@ const ReviewsController = ({ reviews }) => {
                         lowest
                     </button>
                 </div>
-
-                <div>
-                    <div>{reviewsGenerator(activeItem)}</div>
-                </div>
             </div>
-        </>
+
+            <div className="reviews-generator-container">
+                {reviewsGenerator(activeItem)}
+            </div>
+        </div>
     );
 };
 

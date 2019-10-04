@@ -42,15 +42,24 @@ function DishPage({ match, history }) {
 
     return (
         <StyledDishPage>
-            <div className="balls" style={{ textAlign: "center" }}>
-                <button onClick={handleReturnToMenu}>Return To Menu</button>
-                <button onClick={prevDish}>Prev Dish</button>
-                <button onClick={nextDish}>Next Dish</button>
-                <div>
+            <div
+                className="dish-page-container"
+                style={{ textAlign: "center" }}
+            >
+                <div className="dish-button-group">
+                    <button onClick={handleReturnToMenu}>Menu</button>
+                    <button onClick={prevDish}>Prev Dish</button>
+                    <button onClick={nextDish}>Next Dish</button>
+                </div>
+
+                <div className="dish-container">
                     <h1>{thisDish.name}</h1>
                     <img className="main-dish-image" src={thisDish.image} />
                 </div>
-                <ReviewsController reviews={thisDish.reviews} />\
+
+                <div className="bottom-content-container">
+                    <ReviewsController reviews={thisDish.reviews} />
+                </div>
             </div>
         </StyledDishPage>
     );
