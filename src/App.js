@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 
 //plugins
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
@@ -12,38 +13,40 @@ import DishPage from "./components/DishPage";
 import Nav from "./components/Nav";
 import GlobalStyle from "./styles/GlobalStyle";
 
-function App() {
-    return (
-        <Router>
-            <RestaurantProvider>
-                <div className="App">
-                    <Nav />
-                    <Switch>
-                        <Route exact path="/" component={Home} />
+class App extends React.Component {
+    render() {
+        return (
+            <Router>
+                <RestaurantProvider>
+                    <div className="App">
+                        <Nav />
+                        <Switch>
+                            <Route exact path="/" component={Home} />
 
-                        <Route
-                            exact
-                            path="/restaurant_page"
-                            component={RestaurantPage}
-                        />
+                            <Route
+                                exact
+                                path="/restaurant_page"
+                                component={RestaurantPage}
+                            />
 
-                        <Route
-                            exact
-                            path={`/restaurant_page/:restaurantId`}
-                            component={RestaurantMenuPage}
-                        />
+                            <Route
+                                exact
+                                path={`/restaurant_page/:restaurantId`}
+                                component={RestaurantMenuPage}
+                            />
 
-                        <Route
-                            exact
-                            path={`/restaurant_page/:restaurantId/:dishId`}
-                            component={DishPage}
-                        />
-                    </Switch>
-                </div>
-            </RestaurantProvider>
-            <GlobalStyle />
-        </Router>
-    );
+                            <Route
+                                exact
+                                path={`/restaurant_page/:restaurantId/:dishId`}
+                                component={DishPage}
+                            />
+                        </Switch>
+                    </div>
+                </RestaurantProvider>
+                <GlobalStyle />
+            </Router>
+        );
+    }
 }
 
 export default App;
