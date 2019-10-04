@@ -32,9 +32,11 @@ const UserReview = ({ review, author, starCount }) => {
                 className="avatar-image-review"
                 src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
             />
-            <span>{review}</span>
-            <span>{author}</span>
-            <div>{starGenerator(starCount)}</div>
+            <div className="review-content">
+                <span>{review}</span>
+                <span>{author}</span>
+                <div>{starGenerator(starCount)}</div>
+            </div>
         </div>
     );
 };
