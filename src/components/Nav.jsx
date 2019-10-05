@@ -1,23 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import StyledNav from "../styles/StyledNav";
 
 const Nav = () => {
     return (
-        <div
-            style={{
-                alignContent: "center",
-                display: "flex",
-                justifyContent: "space-evenly",
-                backgroundColor: "LightSeaGreen"
-            }}
-        >
-            <Link to={"/"}>
-                <h3>Home</h3>
-            </Link>
-            <Link to={"/restaurant_page"}>
-                <h3>Restaurants</h3>
-            </Link>
-        </div>
+        <StyledNav>
+            <div className="main-nav-container">
+                <Link to={"/"}>
+                    <a className="nav-item-link">Home</a>
+                </Link>
+                <Link to={"/restaurant_page"}>
+                    <a className="nav-item-link">Restaurants</a>
+                </Link>
+            </div>
+        </StyledNav>
     );
 };
 

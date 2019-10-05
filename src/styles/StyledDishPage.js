@@ -37,7 +37,8 @@ const StyledDishPage = styled.div`
     }
 
     .main-dish-image {
-        max-width: 256px;
+        max-width: 250px;
+        min-height: 250px;
     }
 
     .avatar-image-review {
@@ -62,6 +63,7 @@ const StyledDishPage = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        width: 50%;
     }
 
     .bottom-content-container {

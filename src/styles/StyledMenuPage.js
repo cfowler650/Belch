@@ -25,6 +25,7 @@ const StyledMenuPage = styled.div`
         // border: 1px solid red;
     }
 
+
     .dishes-container {
         // border: 2px solid darkgrey;
         display: flex;
@@ -46,7 +47,8 @@ const StyledMenuPage = styled.div`
     }
 
     .dish-image {
-        max-width: 200px;
+      max-width: 250px;
+        max-height: 250px;
     }
 
     .dish-name-div {
