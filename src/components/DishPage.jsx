@@ -121,7 +121,7 @@ class DishPage extends React.Component {
                             </div>
 
                             <div className="bottom-content-container">
-                                {/* <ReviewsController reviews={thisDish.reviews} /> */}
+                                <ReviewsController reviews={thisDish.reviews} />
                             </div>
                         </div>
                     ) : (

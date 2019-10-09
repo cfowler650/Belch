@@ -37,7 +37,7 @@ const StyledDishPage = styled.div`
     }
 
     .main-dish-image {
-        max-width: 250px;
+        max-width: 500px;
         min-height: 250px;
     }
 
