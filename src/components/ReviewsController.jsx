@@ -45,7 +45,7 @@ const ReviewsController = ({ reviews }) => {
                             return (
                                 <UserReview
                                     starCount={review.rating}
-                                    review={review.description}
+                                    review={review.body}
                                     author={review.author}
                                     key={review.id}
                                 />
@@ -61,7 +61,7 @@ const ReviewsController = ({ reviews }) => {
                             return (
                                 <UserReview
                                     starCount={review.rating}
-                                    review={review.description}
+                                    review={review.body}
                                     author={review.author}
                                     key={review.id}
                                 />

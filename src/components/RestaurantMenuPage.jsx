@@ -22,6 +22,7 @@ class RestaurantMenuPage extends React.Component {
                 data.data.menuItems.map(item => {
                     ///prefix data.data to access actual return value
                     res.push({
+                        id: item.id,
                         name: item.name,
                         description: item.description,
                         image: item.image,

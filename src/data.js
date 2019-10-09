@@ -6,7 +6,7 @@ let data = [
         image: "/images/burger.jpg",
         menuItems: [
             {
-                id: 10,
+                id: 1,
                 restaurant: "Burger King",
                 image: "/images/burger_small.jpg",
                 name: "Dish 0",
