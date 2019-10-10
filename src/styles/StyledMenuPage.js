@@ -35,7 +35,7 @@ const StyledMenuPage = styled.div`
 
     .dish-card {
         display: flex;
-        width: 40vh;
+        max-width: 400px;
 
         margin: 2vh;
         flex-direction: column;
