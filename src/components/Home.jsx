@@ -1,17 +1,64 @@
 import React, { useState, useContext, useEffect } from "react";
 import { RestaurantContext } from "../RestaurantContext";
+
+import StyledHome from "../styles/StyledHome";
+import styled, { ThemeProvider } from "styled-components";
+import theme from "styled-theming";
+import Nav from "./Nav";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import StyledModal from "../styles/StyledModal";
+
+const LoginModal = () => {
+    return (
+        // <div className="modal-container">
+        //     <div className="modal-header">
+        //         <h1>Sign Up</h1>
+        //     </div>
+        // </div>
+        <div
+            className="bg-text"
+            style={{
+                display: "flex",
+                flexDirection: "column"
+            }}
+        >
+            <div>
+                <h2 style={{ fontSize: "30px" }}>Sign Up</h2>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
+                    }}
+                >
+                    <input
+                        type="text"
+                        style={{
+                            width: "300px",
+                            height: "40px",
+                            marginBottom: "30px"
+                        }}
+                        placeholder="   Choose a username..."
+                    />
+                    <input
+                        type="text"
+                        style={{ width: "300px", height: "40px" }}
+                        placeholder="   Create a password..."
+                    />
+                </div>
+            </div>
+
+            <p>Already a member? Click here.</p>
+            <p>OR</p>
+            <p>Continue as guest...</p>
+        </div>
+    );
+};
 
 function Home(props) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
     const [testdata, setTestdata] = useState({ tester: [] });
-    // useEffect(() => {
-    //     fetch("/api/users")
-    //         .then(response => response.json())
-    //         .then(json => console.log(json))
-    //         .catch(error => console.log(error));
-    // });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,17 +68,16 @@ function Home(props) {
         fetchData();
     }, []);
 
-    console.log(testdata);
-    console.log(restaurants);
-
     return (
-        <div style={{ textAlign: "center" }}>
-            <h1> Welcome to Belch </h1>
-
-            <Link to={"/restaurant_page"}>
-                <h2>View Restaurants </h2>
-            </Link>
-        </div>
+        <StyledHome>
+            <div className="bg-image-div">
+                <img
+                    className="bg-image"
+                    src="https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                />
+            </div>
+            <LoginModal />
+        </StyledHome>
     );
 }
 

@@ -1,7 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+    html {
+        overflow: auto;
+        margin: 0;
+    }
  * {
+
      box-sizing: border-box;
      letter-spacing: 0.14px;
 
@@ -18,12 +23,20 @@ const GlobalStyle = createGlobalStyle`
 
  body {
     font-family: 'Hind';
-    //  background-color: lightsteelblue;
+    margin: 0px;
  }
 
  h1 {
      font-family: 'Hind'
  }
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
 
 
 `;

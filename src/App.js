@@ -19,7 +19,7 @@ class App extends React.Component {
             <Router>
                 <RestaurantProvider>
                     <div className="App">
-                        <Nav />
+                        {/* <Nav /> */}
                         <Switch>
                             <Route exact path="/" component={Home} />
 
