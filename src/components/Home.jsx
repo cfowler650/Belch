@@ -50,8 +50,12 @@ const LoginModal = () => {
             </div>
 
             <p>Already a member? Click here.</p>
+
             <p>OR</p>
-            <p>Continue as guest...</p>
+
+            <p>
+                <Link to={`/restaurant_page`}>Continue as guest...</Link>
+            </p>
         </div>
     );
 };

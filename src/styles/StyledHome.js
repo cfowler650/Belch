@@ -37,6 +37,16 @@ const StyledHomePage = styled.div`
         height: 50vh;
         width: 50vw;
     }
+
+    a:link {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: white;
+    }
 `;
 
 export default StyledHomePage;
