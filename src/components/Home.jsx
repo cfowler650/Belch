@@ -16,47 +16,49 @@ const LoginModal = () => {
         //         <h1>Sign Up</h1>
         //     </div>
         // </div>
-        <div
-            className="bg-text"
-            style={{
-                display: "flex",
-                flexDirection: "column"
-            }}
-        >
-            <div>
-                <h2 style={{ fontSize: "30px" }}>Sign Up</h2>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center"
-                    }}
-                >
-                    <input
-                        type="text"
+        <>
+            <div
+                className="bg-text"
+                style={{
+                    display: "flex",
+                    flexDirection: "column"
+                }}
+            >
+                <div>
+                    <h2 style={{ fontSize: "30px" }}>Sign Up</h2>
+                    <div
                         style={{
-                            width: "300px",
-                            height: "40px",
-                            marginBottom: "30px"
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center"
                         }}
-                        placeholder="   Choose a username..."
-                    />
-                    <input
-                        type="text"
-                        style={{ width: "300px", height: "40px" }}
-                        placeholder="   Create a password..."
-                    />
+                    >
+                        <input
+                            type="text"
+                            style={{
+                                width: "300px",
+                                height: "40px",
+                                marginBottom: "30px"
+                            }}
+                            placeholder="   Choose a username..."
+                        />
+                        <input
+                            type="text"
+                            style={{ width: "300px", height: "40px" }}
+                            placeholder="   Create a password..."
+                        />
+                    </div>
                 </div>
+
+                <p>Already a member? Click here.</p>
+
+                <p>OR</p>
+
+                <p>
+                    <Link to={`/restaurant_page`}>Continue as guest...</Link>
+                </p>
             </div>
-
-            <p>Already a member? Click here.</p>
-
-            <p>OR</p>
-
-            <p>
-                <Link to={`/restaurant_page`}>Continue as guest...</Link>
-            </p>
-        </div>
+        </>
     );
 };
 
@@ -81,6 +83,36 @@ function Home(props) {
                 />
             </div>
             <LoginModal />
+            <div
+                style={{
+                    zIndex: 2,
+                    position: "absolute",
+                    top: "0%",
+                    left: "0%",
+                    paddingLeft: "2%",
+                    paddingTop: "1%",
+                    width: "100vw",
+                    fontSize: "30px",
+                    color: "white"
+                }}
+            >
+                Belch
+            </div>
+
+            <div
+                style={{
+                    zIndex: 2,
+                    position: "absolute",
+                    paddingLeft: "94%",
+                    paddingTop: "1%",
+                    width: "50vw",
+                    height: "10vh",
+                    fontSize: "24px",
+                    color: "white"
+                }}
+            >
+                Login
+            </div>
         </StyledHome>
     );
 }

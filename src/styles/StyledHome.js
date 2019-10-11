@@ -2,11 +2,8 @@ import styled from "styled-components";
 
 const StyledHomePage = styled.div`
     .bg-image-div {
-        background: linear-gradient(
-            180deg,
-            #ffffff 0%,
-            rgba(255, 255, 255, 0) 100%
-        );
+        background-image: linear-gradient(to top, #f00, #00f);
+
         background-size: cover;
         display: block;
         left: -5px;
@@ -20,9 +17,29 @@ const StyledHomePage = styled.div`
         // background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
     }
 
+    .bg-image-div::after {
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.3) 0,
+            #000 92%
+        );
+
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        position: absolute;
+        right: 0px;
+        height: 102vh;
+        width: 104vw;
+        content: "";
+    }
+
+    .bg-image {
+    }
+
     .bg-text {
         background-color: rgb(0, 0, 0); /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+        background-color: rgba(0, 0, 0, 0.2); /* Black w/opacity/see-through */
         color: white;
         font-weight: bold;
         border: 3px solid #f1f1f1;
