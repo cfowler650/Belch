@@ -17,6 +17,7 @@ const StyledHomePage = styled.div`
         // background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
     }
 
+    //black gradient over image control..
     .bg-image-div::after {
         background-image: linear-gradient(
             to top,
@@ -37,6 +38,7 @@ const StyledHomePage = styled.div`
     .bg-image {
     }
 
+    //this is control of actual modal
     .bg-text {
         background-color: rgb(0, 0, 0); /* Fallback color */
         background-color: rgba(0, 0, 0, 0.2); /* Black w/opacity/see-through */
@@ -51,8 +53,8 @@ const StyledHomePage = styled.div`
         width: 40%;
         padding: 20px;
         text-align: center;
-        height: 50vh;
-        width: 50vw;
+        height: 40vh;
+        width: 45vw;
     }
 
     a:link {
