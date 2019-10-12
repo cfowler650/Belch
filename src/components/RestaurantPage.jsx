@@ -9,185 +9,152 @@ function RestaurantPage({ match }) {
 
     return (
         <StyledRestaurantPage>
-            <div
-                className="sticky-container"
-                style={{ border: "2px solid black", boxSizing: "border-box" }}
-            >
+            <div className="real-sticky">
                 <div
-                    className="sticky-child"
+                    className="real-sticky-child"
                     style={{
                         position: "sticky",
-                        height: "8vh",
-                        border: "2px solid red",
-                        boxSizing: "border-box"
+                        top: 0,
+                        height: "350px",
+                        border: "4px solid blue"
                     }}
                 >
                     <div
-                        className="nav-div-1-child-1"
-                        style={{ display: "flex" }}
-                    >
-                        <a style={{ marginRight: "24px" }}>
-                            <h1
-                                style={{
-                                    margin: 0,
-                                    paddingTop: 0,
-                                    paddingBottom: "2px",
-                                    paddingRight: 0,
-                                    paddingLeft: 0,
-                                    marginRight: "10px",
-                                    fontFamily: "Comic Sans MS"
-                                }}
-                            >
-                                BELCH
-                            </h1>
-                        </a>
-                        <div>
-                            <div>
-                                <div className="search-bar-container">
-                                    <svg
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            d="M11.75 10.335l3.32 3.322-1.413 1.414-3.322-3.32A6.48 6.48 0 0 1 6.5 13a6.5 6.5 0 1 1 5.25-2.665zM6.5 11a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9z"
-                                            fill="currentColor"
-                                            opacity=".9"
-                                            fill-rule="evenodd"
-                                        ></path>
-                                    </svg>
-                                    <input
-                                        className="search-bar"
-                                        placeholder="Search for anything..."
-                                    ></input>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                className="global"
-                style={{ backgroundColor: "orange", width: "100%" }}
-            >
-                <div className="img-container-div">
-                    <div
-                    // className="img-itself"
-                    // style={{
-                    //     backgroundImage:
-                    //         "url(https://raster-static.postmates.com/?url=com.postmates.img.prod.s3.amazonaws.com%2Ffaec99d5-27b4-48dd-b860-5f868e2bb4f0%2Forig.png&quality=85&w=1500&h=0&mode=auto&format=webp&v=4)"
-                    // }}
+                        className="nav-sticky"
+                        style={{ padding: "0%", marginBottom: "2px" }}
                     >
                         <div
-                            className="load-content-here"
+                            classNAme="nav-sticky-child"
                             style={{
-                                border: "2px solid red",
-                                boxSizing: "border-box",
-                                height: "100%",
                                 display: "flex",
-                                justifyContent: "center"
-                            }}
-                        >
-                            <div
-                                className="load-content-child"
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "space-evenly",
-                                    border: "2px solid yellow",
-                                    height: "100%",
-                                    width: "80%"
-                                }}
-                            >
-                                <div
-                                    className="load-content-child-item"
-                                    style={{
-                                        border: "2px solid green",
-
-                                        height: "100%",
-                                        boxSizing: "border-box"
-                                    }}
-                                >
-                                    <img
-                                        src="./images/arbys.jpg"
-                                        style={{ minHeight: "250px" }}
-                                    />
-                                </div>
-                                <div
-                                    className="load-content-child-item"
-                                    style={{
-                                        border: "2px solid blue",
-                                        height: "100%",
-                                        boxSizing: "border-box"
-                                    }}
-                                >
-                                    <h1 style={{ fontSize: "50px" }}>
-                                        GARLIC AIOLI BURGER
-                                    </h1>
-                                    <p>
-                                        This burger is amazing you have to try
-                                        it, This burger is amazing you have to
-                                        try it, This burger is amazing you have
-                                        to try it, This burger is amazing you
-                                        have to try it, This burger is amazing
-                                        you have to try it
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    style={{
-                        position: "absolute",
-                        backgroundColor: "white",
-                        width: "100%"
-                    }}
-                >
-                    <div
-                        className="collision-top"
-                        style={{ textAlign: "center" }}
-                    >
-                        <h1
-                            style={{
-                                position: "sticky",
+                                justifyContent: "space-between",
+                                // position: "sticky",
                                 top: 0
                             }}
                         >
-                            Restaurants
-                        </h1>
-                        <div className="review-container">
-                            <img
-                                className="avatar-image-review"
-                                src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
-                            />
-                            <div className="review-content">
-                                <div style={{ width: "500px" }}>restaurant</div>
-                                <div>stars</div>
+                            <div
+                                className="belch-title"
+                                style={{
+                                    paddingLeft: "2%"
+                                }}
+                            >
+                                <h1
+                                    style={{
+                                        paddingLeft: "2%"
+                                    }}
+                                >
+                                    Belch
+                                </h1>
+                            </div>
+
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    width: "60%",
+                                    paddingRight: "2%"
+                                }}
+                            >
+                                <h1>Menu</h1>
+                                <h1>Account</h1>
                             </div>
                         </div>
 
-                        <div className="review-container">
-                            <img
-                                className="avatar-image-review"
-                                src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
-                            />
-                            <div className="review-content">
-                                <div style={{ width: "500px" }}>restaurant</div>
-                                <div>stars</div>
+                        <div
+                            className="main-content-container"
+                            style={{
+                                display: "flex",
+                                borderTop: "2px solid black"
+                            }}
+                        >
+                            <div
+                                style={{
+                                    maxHeight: "400px",
+                                    maxWidth: "40%",
+
+                                    display: "flex",
+                                    padding: "0% 4%"
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        maxWidth: "600px"
+                                    }}
+                                >
+                                    <img
+                                        style={{
+                                            flex: 1,
+                                            maxWidth: "100%"
+                                        }}
+                                        src="./images/burger.jpg"
+                                    />
+                                </div>
+                            </div>
+                            <div
+                                style={{
+                                    maxHeight: "400px",
+                                    width: "60%",
+                                    border: "2px solid blue"
+                                }}
+                            >
+                                Content2
                             </div>
                         </div>
 
-                        <div className="review-container">
-                            <img
-                                className="avatar-image-review"
-                                src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
-                            />
-                            <div className="review-content">
-                                <div style={{ width: "500px" }}>restaurant</div>
-                                <div>stars</div>
-                            </div>
+                        <div
+                            style={{
+                                textAlign: "center",
+                                border: "1px solid red",
+                                background: "white"
+                            }}
+                        >
+                            <h1 style={{}}>restaurants</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    className="restaurant-list-container"
+                    style={{ display: "flex" }}
+                >
+                    <div className="sticky-parent-1" style={{ width: "100%" }}>
+                        <div
+                            style={{
+                                paddingLeft: "2%",
+                                textAlign: "center",
+                                position: "relative",
+                                top: 0,
+                                height: "100px"
+                            }}
+                        ></div>
+
+                        <div
+                            style={{
+                                marginBottom: "200px",
+
+                                display: "flex",
+                                flexDirection: "column"
+                            }}
+                        >
+                            {data.restaurants.map(restaurant => (
+                                <div className="restaurant-card">
+                                    <Link
+                                        to={`restaurant_page/${restaurant.id}`}
+                                    >
+                                        <img
+                                            className="restaurant-image"
+                                            src={restaurant.image}
+                                        />
+                                    </Link>
+                                    <div className="restaurant-content">
+                                        <div style={{ width: "500px" }}>
+                                            {restaurant.name}
+                                            blablalblablalba
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
