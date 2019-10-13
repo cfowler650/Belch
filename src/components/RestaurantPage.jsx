@@ -18,7 +18,7 @@ const MainContent = ({ selectedRestaurant }) => {
                             <img style={{ flex: 1, maxWidth: "100%" }} src={selectedRestaurant.image} />
                         </div>
                     </div>
-                    <div style={{ maxHeight: "400px", width: "60%", border: "2px solid blue", marginRight: "4%", paddingRight: "4%" }}>
+                    <div style={{ maxHeight: "400px", width: "60%", marginRight: "4%", paddingRight: "4%" }}>
                         <div
                             className="top-rated-dish-content"
                             style={{
@@ -48,7 +48,7 @@ const MainContent = ({ selectedRestaurant }) => {
 
 
                 <div className="main-content-container" style={{ display: "flex", borderTop: "2px solid black", justifyContent: "center" }}>
-                    <div style={{ minHeight: "327px", minWidth: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <div style={{ minHeight: "300px", minWidth: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                         <h1 style={{ letterSpacing: "4px" }}>Welcome to Belch, choose a restaurant to get started</h1>
                     </div>
                 </div>
@@ -110,9 +110,9 @@ function RestaurantPage({ match }) {
             <div className="real-sticky">
                 <div className="real-sticky-child" style={{ position: "sticky", top: 0, height: "350px", border: "4px solid blue" }}>
                     <div className="nav-sticky" style={{ padding: "0%", marginBottom: "2px" }}>
-                        <div className="nav-sticky-child" style={{ display: "flex", justifyContent: "space-between", top: 0 }}>
+                        <div className="nav-sticky-child" style={{ display: "flex", justifyContent: "space-between", top: 0, background: "black", boxShadow: "0 4px 10px -2px #C6961D"}}>
                             <div className="belch-title" style={{ paddingLeft: "2%" }}>
-                                <Link to={'/'}><h1 style={{ paddingLeft: "2%", fontSize: "30px" }}> Belch </h1></Link>
+                                <Link to={'/'}><h1 style={{ paddingLeft: "2%", fontSize: "30px", color: "white" }}> Belch </h1></Link>
                             </div>
                             {/* <div style={{ display: "flex", justifyContent: "space-between", width: "60%", paddingRight: "2%" }}>
                                 <h1 style={{ fontSize: "30px" }}>Menu</h1>
@@ -123,7 +123,7 @@ function RestaurantPage({ match }) {
 
                         {firstRender == true ?
                             <div className="main-content-container" style={{ display: "flex", borderTop: "2px solid black", justifyContent: "center" }}>
-                                <div style={{ minHeight: "327px", minWidth: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <div style={{ minHeight: "300px", minWidth: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                                     <h1 style={{ letterSpacing: "4px" }}>Welcome to Belch, choose a restaurant to get started</h1>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ function RestaurantPage({ match }) {
 
                 <div
                     className="restaurant-list-container"
-                    style={{ display: "flex" }}
+                    style={{ display: "flex", background: "black" }}
                 >
                     <div className="sticky-parent-1" style={{ width: "100%" }}>
                         <div
@@ -164,8 +164,8 @@ function RestaurantPage({ match }) {
                         <div
                             style={{
                                 marginBottom: "200px",
-
                                 display: "flex",
+                                alignItems: "center",
                                 flexDirection: "column"
                             }}
                         >
@@ -173,7 +173,8 @@ function RestaurantPage({ match }) {
 
 
                             {data.restaurants.map(restaurant => (
-                                <div onClick={handleDishSelect} id={restaurant.id} className="restaurant-card" key={restaurant.id}>
+                                <div onClick={handleDishSelect} id={restaurant.id} className="restaurant-card" key={restaurant.id} style={{     border: "2px solid #181818",
+        boxShadow: "-3px 3px 0px white"}}>
 
                                     <Link
                                         to={`restaurant_page/${restaurant.id}`}
