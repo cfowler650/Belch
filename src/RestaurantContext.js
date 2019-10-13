@@ -24,6 +24,8 @@ export const RestaurantProvider = props => {
         fetchUsers();
     }, []);
 
+    // console.log("ddatainrestaurantprovider", data);
+
     return (
         <RestaurantContext.Provider value={[data, setData]}>
             {props.children}

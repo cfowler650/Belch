@@ -28,12 +28,11 @@ const StyledRestaurantPage = styled.div`
     .nav-sticky {
         padding: 0 36px 0 36px;
         display: block;
-        position: relative;
         top: 0px;
         right: 0px;
         left: 0px;
         /* z-index: 400; */
-        height: 400px;
+        // height: 400px;
         background-color: rgb(255, 255, 255);
         transition: background-color 0.2s ease-in-out 0s;
     }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, Component } from "react";
+import React, { useContext, useEffect, useState, Component } from "react";
 import axios from "axios";
 import { RestaurantContext } from "../RestaurantContext";
 import { Link } from "react-router-dom";
@@ -6,101 +6,52 @@ import StyledRestaurantPage from "../styles/StyledRestaurantPage";
 
 function RestaurantPage({ match }) {
     const [data, setData] = useContext(RestaurantContext);
+    const [selectedDish, setSelectedDish] = useState({ thisDish: [], firstRender: true });
+
+    const handleDishSelect = (e) => {
+        // setSelectedDish(thisDish[]);
+        console.log('hello', e.target.id)
+    };
 
     return (
         <StyledRestaurantPage>
             <div className="real-sticky">
-                <div
-                    className="real-sticky-child"
-                    style={{
-                        position: "sticky",
-                        top: 0,
-                        height: "350px",
-                        border: "4px solid blue"
-                    }}
-                >
-                    <div
-                        className="nav-sticky"
-                        style={{ padding: "0%", marginBottom: "2px" }}
-                    >
-                        <div
-                            classNAme="nav-sticky-child"
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                // position: "sticky",
-                                top: 0
-                            }}
-                        >
-                            <div
-                                className="belch-title"
-                                style={{
-                                    paddingLeft: "2%"
-                                }}
-                            >
-                                <h1
-                                    style={{
-                                        paddingLeft: "2%"
-                                    }}
-                                >
-                                    Belch
-                                </h1>
+                <div className="real-sticky-child" style={{ position: "sticky", top: 0, height: "350px", border: "4px solid blue" }}>
+                    <div className="nav-sticky" style={{ padding: "0%", marginBottom: "2px" }}>
+                        <div classNAme="nav-sticky-child" style={{ display: "flex", justifyContent: "space-between", top: 0 }}>
+                            <div className="belch-title" style={{ paddingLeft: "2%" }}>
+                                <h1 style={{ paddingLeft: "2%" }}> Belch </h1>
                             </div>
-
-                            <div
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    width: "60%",
-                                    paddingRight: "2%"
-                                }}
-                            >
+                            <div style={{ display: "flex", justifyContent: "space-between", width: "60%", paddingRight: "2%" }}>
                                 <h1>Menu</h1>
                                 <h1>Account</h1>
                             </div>
                         </div>
 
-                        <div
-                            className="main-content-container"
-                            style={{
-                                display: "flex",
-                                borderTop: "2px solid black"
-                            }}
-                        >
-                            <div
-                                style={{
-                                    maxHeight: "400px",
-                                    maxWidth: "40%",
-
-                                    display: "flex",
-                                    padding: "0% 4%"
-                                }}
-                            >
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        maxWidth: "600px"
-                                    }}
-                                >
-                                    <img
+                        {selectedDish.firstRender ? <div>nothing</div> :
+                            <div className="main-content-container" style={{ display: "flex", borderTop: "2px solid black" }}>
+                                <div style={{ maxHeight: "400px", maxWidth: "40%", display: "flex", padding: "0% 4%" }}>
+                                    <div style={{ display: "flex", maxWidth: "600px" }}>
+                                        <img style={{ flex: 1, maxWidth: "100%" }} src="./images/burger.jpg" />
+                                    </div>
+                                </div>
+                                <div style={{ maxHeight: "400px", width: "60%", border: "2px solid blue", marginRight: "4%", paddingRight: "4%" }}>
+                                    <div
+                                        className="top-rated-dish-content"
                                         style={{
-                                            flex: 1,
-                                            maxWidth: "100%"
+                                            paddingLeft: "3%",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "space-evenly"
                                         }}
-                                        src="./images/burger.jpg"
-                                    />
+                                    >
+                                        <h3>{console.log('selectedDish.thisDish', selectedDish.thisDish)} Top Dish:</h3>
+                                        <h1>menuitem.name</h1>
+                                        <h3>menuitem.description</h3>
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                style={{
-                                    maxHeight: "400px",
-                                    width: "60%",
-                                    border: "2px solid blue"
-                                }}
-                            >
-                                Content2
-                            </div>
-                        </div>
+                        }
 
                         <div
                             style={{
@@ -137,8 +88,15 @@ function RestaurantPage({ match }) {
                                 flexDirection: "column"
                             }}
                         >
+                            {/* {console.log(data.restaurants)} */}
+                            {console.log("selecteDish", selectedDish)}
+
+
                             {data.restaurants.map(restaurant => (
                                 <div className="restaurant-card">
+                                    <div onClick={handleDishSelect} id={restaurant.id}>
+                                        {restaurant.id}
+                                    </div>
                                     <Link
                                         to={`restaurant_page/${restaurant.id}`}
                                     >
@@ -151,6 +109,7 @@ function RestaurantPage({ match }) {
                                         <div style={{ width: "500px" }}>
                                             {restaurant.name}
                                             blablalblablalba
+                                            {/* {restaurant.menuItems} */}
                                         </div>
                                     </div>
                                 </div>
