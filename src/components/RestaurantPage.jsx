@@ -47,7 +47,10 @@ import StyledRestaurantPage from "../styles/StyledRestaurantPage";
 
                         <div className="main-content-welcome" style={{  }}>
                             <div className="main-content-welcome-child" style={{ }}>
-                                <h1 style={{ letterSpacing: "4px" }}>Welcome to Belch, choose a restaurant to get started</h1>
+                                <h1 className="welcome-header">Welcome to Belch, choose a restaurant to get started</h1>
+                                <div className="restaurants-header">
+                                    Restaurants
+                                </div>
                             </div>
                         </div>
                 }
@@ -94,6 +97,12 @@ import StyledRestaurantPage from "../styles/StyledRestaurantPage";
                                 <div className="main-content-welcome" >
                                     <div className="main-content-welcome-child">
                                         <h1 className="welcome-header">Welcome to Belch, choose a restaurant to get started</h1>
+                                        <div style={{background: "#222", width: "78%"}}>
+                                            <div className="restaurants-header">
+                                                <h1 className="restaurant-h1" style={{fontSize: "30px", margin: 0, padding: 0}}>Restaurants</h1>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -112,45 +121,42 @@ import StyledRestaurantPage from "../styles/StyledRestaurantPage";
                             <div className="bottom-content-container">
 
 
-                                <div className="sort-container" >
-                                    <div>
-                                        <h1>Sort By:</h1>
-                                        <h3>Highest Rated, Lowest Rated </h3>
+                                <div className="sort-container">
+                                    <div style={{display: "flex", justifyContent: "space-evenly", width: "36%"}}>
+                                        <h1 style={{paddingTop: "2%", fontSize: "26px"}}>Sort By:</h1>
+                                        <h3 style={{paddingTop: "3%"}}>Highest Rated - Lowest Rated - Most Popular</h3>
                                     </div>
                                 </div>
 
 
                                 {data.restaurants.map(restaurant => (
 
-                                    <div onClick={handleDishSelect} id={restaurant.id} className="restaurant-card" key={restaurant.id}
-                                        style={{ }}>
 
 
-                                        <div className="restaurant-content" >
-                                            <div className="restaurant-name-top">
-                                                <div className="restaurant-name-top-header">
-                                                    {restaurant.name}
+                                         <div  id={restaurant.id} className="restaurant-card" key={restaurant.id}>
+
+                                            <div className="restaurant-content" >
+                                                <div className="restaurant-name-top">
+                                                    <div className="restaurant-name-top-header">
+                                                       <Link style={{color: "white"}} to={`/restaurant_page/${restaurant.id}`}> {restaurant.name} </Link>
+                                                    </div>
+                                                    <h2 className="restaurant-price"> $$ </h2>
                                                 </div>
-                                                <h2 className="restaurant-price"> $$ </h2>
+
+                                                <div className="restaurant-inner-content">
+                                                    <div>
+                                                        <h3 className="restaurant-cuisine-text">American Cuisine</h3>
+                                                    </div>
+                                                    <div style={{display: "flex", justifyContent: "space-between", }}>
+                                                        <h3 className="restaurant-reviews-text">3000 Reviews</h3>
+                                                        <p className="restaurant-distance-text">10 miles from you</p>
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <div className="restaurant-inner-content">
-
-                                                <div>
-                                                    <h3 className="restaurant-cuisine-text">American Cuisine</h3>
-                                                </div>
-
-                                                <div style={{display: "flex", justifyContent: "space-between", }}>
-
-                                                    <h3 className="restaurant-reviews-text">3000 Reviews</h3>
-
-                                                    <p className="restaurant-distance-text">10 miles from you</p>
-
-                                                </div>
-
-                                            </div>
                                         </div>
-                                    </div>
+
+
 
                                 ))}
 

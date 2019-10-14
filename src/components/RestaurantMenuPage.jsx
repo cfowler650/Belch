@@ -37,10 +37,17 @@ class RestaurantMenuPage extends React.Component {
             });
     }
 
+     handleReturnToMenu() {
+        this.props.history.goBack();
+    }
+
     render() {
         return (
             <StyledMenuPage>
                 <div className="menu-page-container">
+                     <Link to={"/restaurant_page/"}> <button >
+                                    Back To All Restaurants
+                                </button> </Link>
                     <div className="dishes-container">
                         {this.state.dishes.map(dish => (
                             <div className="dish-card">

@@ -9,12 +9,6 @@ class DishPage extends React.Component {
     constructor(props) {
         super(props);
 
-        // const initState = () => {
-        //    let selectedDishIDX = menu.findIndex(
-
-        //    )
-        // };
-
         this.state = {
             dishes: [],
             currentDishIDX: []

@@ -146,19 +146,54 @@ const StyledRestaurantPage = styled.div`
     .main-content-welcome-child {
     //    max-height: 300px;
     //    max-width: 40%;
-       padding: 0% 4%;
+       padding-top: 3%;
        display: flex;
-       min-height: 300px;
+    //    min-height: 300px;
        min-width: 100%;
        justify-content: center;
        align-items: center;
-       border-bottom: 10px solid black;
+    //    border-bottom: 10px solid black;
        box-sizing: content-box;
+       flex-direction: column;
 
     }
 
     .welcome-header {
         letter-spacing: 4px;
+        padding-bottom: 2%;
+    }
+    .restaurants-header {
+    //        font-size: 30px;
+    // width: 100%;
+    // text-align: center;
+    // border: 1px solid black;
+    // margin-top: 20px;
+
+             width: 100%;
+               justify-content: center;
+               display: flex;
+    }
+    .restaurant-h1 {
+       display: flex;
+       width: 60%;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       font-size: 30px;
+       color: white;
+       background:  #222222;
+
+    }
+    .restaurant-h1:before, .restaurant-h1:after {
+       content: '';
+       border-top: 2px solid;
+       margin: 0 60px 0 0;
+       flex: 1 0 20px;
+       width: 100px ;
+       color: white;
+    }
+     .restaurant-h1:after {
+       margin: 0 0 0 60px;
     }
 
     .real-sticky-child {
@@ -216,7 +251,7 @@ const StyledRestaurantPage = styled.div`
     }
 
     .sort-container {
-        margin: 2%;
+        // margin: 2%;
         color: white;
         display: flex;
         justify-content: flex-start;
