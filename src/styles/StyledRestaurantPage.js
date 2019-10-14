@@ -251,7 +251,7 @@ button:focus {
     }
 
     .sticky-parent-1 {
-        width: 80%;
+        width: 50%;
          height: 100vh;
          background: rgb(34, 34, 34);
     }
@@ -280,8 +280,9 @@ button:focus {
         // margin: 2%;
         color: white;
         display: flex;
-        justify-content: flex-start;
         width: 60%;
+
+
     }
 
 

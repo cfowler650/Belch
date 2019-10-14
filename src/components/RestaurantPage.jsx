@@ -96,7 +96,8 @@ function RestaurantPage({ match }) {
 
                                 <div className="main-content-welcome" >
                                     <div className="main-content-welcome-child">
-                                        <h1 className="welcome-header">Welcome to Belch, choose a restaurant to get started</h1>
+                                        <h1 className="welcome-header">Where are you eating today?</h1>
+                                        <p style={{color: "white"}}>We'll let you know the best item to order on the menu.</p>
                                         <div style={{ background: "black", width: "100%" }}>
                                             <div className="restaurants-header">
                                                 <div className="restaurant-h1">
@@ -124,9 +125,9 @@ function RestaurantPage({ match }) {
 
 
                             <div className="sort-container">
-                                <div style={{ display: "flex", justifyContent: "space-evenly", width: "36%" }}>
-                                    <h1 style={{ paddingTop: "2%", fontSize: "26px" }}>Sort By:</h1>
-                                    <h3 style={{ paddingTop: "3%" }}>Highest Rated - Lowest Rated - Most Popular</h3>
+                                <div style={{ display: "flex" }}>
+                                    {/* <h3 style={{ paddingTop: "1%"}}>Sort By:</h3>
+                                    <h3 style={{ paddingTop: "2%", paddingLeft:"2%", fontSize:"16px", width: "500px"}}>Highest Rated - Lowest Rated - Most Popular</h3> */}
                                 </div>
                             </div>
 
