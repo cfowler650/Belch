@@ -95,7 +95,7 @@ const StyledRestaurantPage = styled.div`
         padding: 0 36px 0 36px;
         // height: 1000px;
 
-        border: 2px solid black;
+        // border: 2px solid black;
         top: 20;
         display: flex;
         background: black;
@@ -141,6 +141,21 @@ const StyledRestaurantPage = styled.div`
     .main-content-welcome {
         display: flex;
         justify-content: center;
+        // background: url('https://www.marineroom.com/resourcefiles/homeimages/the-marine-room-restaurant-in-la-jolla-top4.jpg');
+        background: url('https://ak6.picdn.net/shutterstock/videos/17127316/thumb/1.jpg');
+       background-size: cover;
+
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.6); /* Black w/opacity/see-through */
+
+
+    }
+
+     .welcome-header {
+        letter-spacing: 4px;
+        padding-bottom: 3%;
+        color: white;
+
     }
 
     .main-content-welcome-child {
@@ -156,12 +171,12 @@ const StyledRestaurantPage = styled.div`
        box-sizing: content-box;
        flex-direction: column;
 
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.6); /* Black w/opacity/see-through */
+
     }
 
-    .welcome-header {
-        letter-spacing: 4px;
-        padding-bottom: 2%;
-    }
+
     .restaurants-header {
     //        font-size: 30px;
     // width: 100%;
@@ -175,15 +190,25 @@ const StyledRestaurantPage = styled.div`
     }
     .restaurant-h1 {
        display: flex;
-       width: 60%;
+       width: 30%;
        justify-content: center;
        align-items: center;
        text-align: center;
        font-size: 30px;
        color: white;
-       background:  #222222;
+       background:  black;
+       padding-top: 0.5%;
+       padding-bottom: 0.5%;
 
     }
+
+
+    input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
     .restaurant-h1:before, .restaurant-h1:after {
        content: '';
        border-top: 2px solid;
@@ -199,12 +224,12 @@ const StyledRestaurantPage = styled.div`
     .real-sticky-child {
         position: sticky;
         top: 0;
-        height: 350px;
+        // height: 350px;
     }
 
     .nav-sticky {
        padding: 0%;
-       margin-bottom: 2px;
+    //    margin-bottom: 2px;
     }
 
     .nav-sticky-child {
@@ -238,6 +263,7 @@ const StyledRestaurantPage = styled.div`
         align-items: center;
         flex-direction: column;
 
+
     }
 
     .divider {
@@ -246,7 +272,7 @@ const StyledRestaurantPage = styled.div`
         text-align: center;
         position: relative;
         top: 0;
-        height: 100px;
+        // height: 100px;
 
     }
 
