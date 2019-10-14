@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const StyledHomePage = styled.div`
     .bg-image-div {
-        background-image: linear-gradient(to top, #f00, #00f);
 
+        border: 10px solid black;
         background-size: cover;
         display: block;
         left: -5px;
@@ -53,8 +53,8 @@ const StyledHomePage = styled.div`
         width: 40%;
         padding: 20px;
         text-align: center;
-        height: 40vh;
-        width: 45vw;
+        height: 30vh;
+    width: 20vw;
     }
 
     a:link {

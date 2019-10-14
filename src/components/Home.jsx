@@ -11,11 +11,7 @@ import StyledModal from "../styles/StyledModal";
 
 const LoginModal = () => {
     return (
-        // <div className="modal-container">
-        //     <div className="modal-header">
-        //         <h1>Sign Up</h1>
-        //     </div>
-        // </div>
+
         <>
             <div
                 className="bg-text"
@@ -78,6 +74,7 @@ function Home(props) {
                 <img
                     className="bg-image"
                     src="https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    style={{ width: "100vw", height: "100vh" }}
                 />
             </div>
             <LoginModal />
