@@ -3,6 +3,7 @@ import axios from "axios";
 import { RestaurantContext } from "../RestaurantContext";
 import { Link } from "react-router-dom";
 import StyledRestaurantPage from "../styles/StyledRestaurantPage";
+import Collapsible from 'react-collapsible';
 
 
 
@@ -15,17 +16,6 @@ function RestaurantPage({ match }) {
     const [search, setSearch] = useState('')
     const [firstRender, setFirstRender] = useState(true);
 
-    // const handleDishSelect = (e) => {
-    //     let dish = data.restaurants.find(restaurant => restaurant.id === parseInt(e.target.id))
-    //     setTimeout((e) => {
-    //         if (firstRender == true) {
-    //             setFirstRender(false)
-    //         }
-
-    //         setselectedRestaurant({ ...selectedRestaurant }); //this pretty much fixed the random undefines
-    //         setselectedRestaurant(dish);
-    //     }, 200)
-    // };
 
     const handleClick = (target) => {
         setFirstRender(false)
@@ -115,6 +105,7 @@ function RestaurantPage({ match }) {
                             </div>
 
 
+
                             {filteredRestaurants.map(restaurant => (
 
                                 <div onClick={() => handleClick(restaurant)} className="restaurant-card" key={restaurant.id}>
@@ -133,14 +124,38 @@ function RestaurantPage({ match }) {
                                             </div>
                                             <div style={{ display: "flex", justifyContent: "space-between", }}>
                                                 <h3 className="restaurant-reviews-text">3000 Reviews</h3>
-                                                <p className="restaurant-distance-text">10 miles from you</p>
                                             </div>
+
+
+
+                                                    <Collapsible triggerStyle={{display: "flex", alignItems: "center",  flexDirection: "column"}} trigger="View Menu">
+                                                        <div style={{display: "flex", alignItems: "center",  flexDirection: "column"}}>
+
+                                                            <div className="menu-item-list-container" style={{display: "flex", alignItems: "center",  flexDirection: "column", paddingTop: "15px", width:"100%"}}>
+                                                             {restaurant.menuItems.map(menuItem => (
+                                                                <div className="menu-item-card" style={{width: "100%"}}>
+                                                                    <div className="menu-item-card-content" style={{display: "flex", paddingBottom: "3%"}}>
+                                                                        <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image}/></div>
+                                                                        <div className="menu-item-card-details" style={{marginRight: "23px", paddingLeft: "20px"}}>
+                                                                            <p className="menu-item-card-name" style={{fontSize: "16px", margin:"0px"}}>{menuItem.name} </p>
+                                                                            <div className="menu-item-card-description" style={{fontSize: "10px"}}>
+                                                                                {menuItem.description}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                             ))}
+
+                                                            </div>
+
+                                                        </div>
+                                                    </Collapsible>
+
+
+
                                         </div>
                                     </div>
-
                                 </div>
-
-
 
                             ))}
 

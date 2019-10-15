@@ -203,6 +203,19 @@ const StyledRestaurantPage = styled.div`
 
     }
 
+    .menu-item-card-image-div {
+
+        min-width: 75px;
+        margin-left: 10px;
+        height: 75px;
+        margin-right: 0px;
+
+    }
+
+    .menu-item-card-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
     input:focus,
 select:focus,
