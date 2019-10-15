@@ -191,7 +191,7 @@ const StyledRestaurantPage = styled.div`
     }
     .restaurant-h1 {
        display: flex;
-       width: 30%;
+    //    width: 30%;
        justify-content: center;
        align-items: center;
        text-align: center;

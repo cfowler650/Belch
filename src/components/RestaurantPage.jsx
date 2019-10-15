@@ -12,6 +12,7 @@ function RestaurantPage({ match }) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
     const [selectedRestaurant, setselectedRestaurant] = useState(false);
     const [selectedResMenu, setselectedResMenu] = useState([]);
+    const [search, setSearch] = useState('')
     const [firstRender, setFirstRender] = useState(true);
 
     // const handleDishSelect = (e) => {
@@ -32,6 +33,15 @@ function RestaurantPage({ match }) {
         setselectedResMenu(target.menuItems)
     }
 
+    const updateSearch = (e) => {
+        setSearch(e.target.value.substr(0, 25) )
+    }
+
+    let filteredRestaurants = restaurants.filter(
+        (res) => {
+           return res.name.toLowerCase().includes(search.toLowerCase());
+        }
+    )
     return (
         <StyledRestaurantPage>
             <div className="real-sticky">
@@ -56,7 +66,7 @@ function RestaurantPage({ match }) {
                                         <div style={{ background: "black", width: "100%" }}>
                                             <div className="restaurants-header">
                                                 <div className="restaurant-h1">
-                                                     <input type="text" className="restaurant-h1" placeholder="Restaurants"style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
+                                                     <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
                                                 </div>
 
                                             </div>
@@ -105,9 +115,7 @@ function RestaurantPage({ match }) {
                             </div>
 
 
-                            {restaurants.map(restaurant => (
-
-
+                            {filteredRestaurants.map(restaurant => (
 
                                 <div onClick={() => handleClick(restaurant)} className="restaurant-card" key={restaurant.id}>
 
@@ -136,6 +144,7 @@ function RestaurantPage({ match }) {
 
                             ))}
 
+                                {console.log(filteredRestaurants)}
 
                         </div>
                     </div>
