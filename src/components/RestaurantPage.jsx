@@ -88,7 +88,7 @@ function RestaurantPage({ match }) {
                                         <div style={{ background: "black", width: "100%" }}>
                                             <div className="restaurants-header">
                                                 <div className="restaurant-h1">
-                                                     <input type="text" className="restaurant-h1" placeholder="Restaurants"style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
+                                                     <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
                                                 </div>
 
                                             </div>
