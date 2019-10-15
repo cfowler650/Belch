@@ -27,7 +27,7 @@ export const RestaurantProvider = props => {
     // console.log("ddatainrestaurantprovider", data);
 
     return (
-        <RestaurantContext.Provider value={[data, setData]}>
+        <RestaurantContext.Provider value={[data.restaurants, setData]}>
             {props.children}
         </RestaurantContext.Provider>
     );

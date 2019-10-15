@@ -6,76 +6,31 @@ import StyledRestaurantPage from "../styles/StyledRestaurantPage";
 
 
 
-const MainContent = ({ selectedRestaurant }) => {
 
-    return (
-        <>
-            {
-                selectedRestaurant
-
-                    ?
-
-                    <div className="main-content-rendered">
-                        <div className="main-content-rendered-child">
-                            <div className="rendered-child-image-div">
-                                <img className="rendered-child-image" src={selectedRestaurant.image} />
-                            </div>
-                        </div>
-
-                        <div className="main-content-rendered-child-2">
-                            <div className="top-rated-dish-content">
-                                {
-                                    selectedRestaurant.menuItems !== undefined
-
-                                        ?
-
-                                        <>
-                                            <h3> Top Dish At {selectedRestaurant.name}</h3>
-                                            <h1>{selectedRestaurant.menuItems[0].name}</h1>
-                                            <h3 style={{ fontSize: "16px" }}>{selectedRestaurant.menuItems[0].description}</h3>
-                                        </>
-
-                                        :
-
-                                        <p></p>
-                                }
-                            </div>
-                        </div>
-                    </div>
-
-                    :
-
-                    <div className="main-content-welcome" style={{}}>
-                        <div className="main-content-welcome-child" style={{}}>
-                            <h1 className="welcome-header">Welcome to Belch, choose a restaurant to get started</h1>
-                            <div className="restaurants-header">
-                                Restaurants
-                                </div>
-                        </div>
-                    </div>
-            }
-        </>
-    );
-
-}
 
 function RestaurantPage({ match }) {
-    const [data, setData] = useContext(RestaurantContext);
+    const [restaurants, setRestaurants] = useContext(RestaurantContext);
     const [selectedRestaurant, setselectedRestaurant] = useState(false);
+    const [selectedResMenu, setselectedResMenu] = useState([]);
     const [firstRender, setFirstRender] = useState(true);
 
-    const handleDishSelect = (e) => {
-        let dish = data.restaurants.find(restaurant => restaurant.id === parseInt(e.target.id))
-        setTimeout((e) => {
-            if (firstRender == true) {
-                setFirstRender(false)
-            }
+    // const handleDishSelect = (e) => {
+    //     let dish = data.restaurants.find(restaurant => restaurant.id === parseInt(e.target.id))
+    //     setTimeout((e) => {
+    //         if (firstRender == true) {
+    //             setFirstRender(false)
+    //         }
 
-            setselectedRestaurant({ ...selectedRestaurant }); //this pretty much fixed the random undefines
-            setselectedRestaurant(dish);
-        }, 200)
-    };
+    //         setselectedRestaurant({ ...selectedRestaurant }); //this pretty much fixed the random undefines
+    //         setselectedRestaurant(dish);
+    //     }, 200)
+    // };
 
+    const handleClick = (target) => {
+        setFirstRender(false)
+        setselectedRestaurant(target)
+        setselectedResMenu(target.menuItems)
+    }
 
     return (
         <StyledRestaurantPage>
@@ -111,7 +66,25 @@ function RestaurantPage({ match }) {
 
                                 :
 
-                                <MainContent selectedRestaurant={selectedRestaurant} />
+
+
+                                 <div className="main-content-welcome" >
+                                    <div className="main-content-welcome-child" style={{paddingTop: 0}}>
+                                        <h1 className="welcome-header" style={{paddingBottom: 0}}>{selectedResMenu[0].name} {console.log(selectedResMenu[0].name)}</h1>
+                                        <div className="rendered-child-image-div">
+                                                <img className="rendered-child-image" src={selectedResMenu[0].image} />
+                                        </div>
+                                        <p style={{color: "white"}}>Best item at {selectedRestaurant.name}</p>
+                                        <div style={{ background: "black", width: "100%" }}>
+                                            <div className="restaurants-header">
+                                                <div className="restaurant-h1">
+                                                     <input type="text" className="restaurant-h1" placeholder="Restaurants"style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                         }
                     </div>
@@ -132,11 +105,11 @@ function RestaurantPage({ match }) {
                             </div>
 
 
-                            {data.restaurants.map(restaurant => (
+                            {restaurants.map(restaurant => (
 
 
 
-                                <div id={restaurant.id} className="restaurant-card" key={restaurant.id}>
+                                <div onClick={() => handleClick(restaurant)} className="restaurant-card" key={restaurant.id}>
 
                                     <div className="restaurant-content" >
                                         <div className="restaurant-name-top">
@@ -175,3 +148,57 @@ function RestaurantPage({ match }) {
 
 export default RestaurantPage;
 
+
+
+// const MainContent = ({ selectedRestaurant }) => {
+
+//     return (
+//         <>
+//             {
+//                 selectedRestaurant
+
+//                     ?
+
+//                     <div className="main-content-rendered">
+//                         <div className="main-content-rendered-child">
+//                             <div className="rendered-child-image-div">
+//                                 <img className="rendered-child-image" src={selectedRestaurant.image} />
+//                             </div>
+//                         </div>
+
+//                         <div className="main-content-rendered-child-2">
+//                             <div className="top-rated-dish-content">
+//                                 {
+//                                     selectedRestaurant.menuItems !== undefined
+
+//                                         ?
+
+//                                         <>
+//                                             <h3> Top Dish At {selectedRestaurant.name}</h3>
+//                                             <h1>{selectedRestaurant.menuItems[0].name}</h1>
+//                                             <h3 style={{ fontSize: "16px" }}>{selectedRestaurant.menuItems[0].description}</h3>
+//                                         </>
+
+//                                         :
+
+//                                         <p></p>
+//                                 }
+//                             </div>
+//                         </div>
+//                     </div>
+
+//                     :
+
+//                     <div className="main-content-welcome" style={{}}>
+//                         <div className="main-content-welcome-child" style={{}}>
+//                             <h1 className="welcome-header">Welcome to Belch, choose a restaurant to get started</h1>
+//                             <div className="restaurants-header">
+//                                 Restaurants
+//                                 </div>
+//                         </div>
+//                     </div>
+//             }
+//         </>
+//     );
+
+// }

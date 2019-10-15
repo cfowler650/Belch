@@ -5,7 +5,7 @@ const StyledRestaurantPage = styled.div`
         width: 60%;
         align-items: flex-start;
         display: flex;
-        margin: 20px;
+        margin: 8px;
         // box-shadow: 0 1px #ffffff inset, 0 1px 3px rgba(34, 25, 25, 0.4);
         // border-radius: 0.5%;
         // padding: 1%;
@@ -135,6 +135,7 @@ const StyledRestaurantPage = styled.div`
     .rendered-child-image {
         flex: 1;
         max-width: 100%;
+        max-height: 207px;
     }
 
 
@@ -153,21 +154,21 @@ const StyledRestaurantPage = styled.div`
 
      .welcome-header {
         letter-spacing: 4px;
-        padding-bottom: 3%;
+        padding-bottom: 5%;
         color: white;
+        margin: 12px;
 
     }
 
     .main-content-welcome-child {
-    //    max-height: 300px;
-    //    max-width: 40%;
-       padding-top: 3%;
+
+       padding-top: 7%;
        display: flex;
-    //    min-height: 300px;
+
        min-width: 100%;
        justify-content: center;
        align-items: center;
-    //    border-bottom: 10px solid black;
+
        box-sizing: content-box;
        flex-direction: column;
 
@@ -257,7 +258,7 @@ button:focus {
     }
 
     .bottom-content-container {
-
+        padding-top: 10px;
         margin-bottom: 200px;
         display: flex;
         align-items: center;
