@@ -6,16 +6,13 @@ import StyledRestaurantPage from "../styles/StyledRestaurantPage";
 import Collapsible from 'react-collapsible';
 
 
-
-
-
 function RestaurantPage({ match }) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
     const [selectedRestaurant, setselectedRestaurant] = useState(false);
     const [selectedResMenu, setselectedResMenu] = useState([]);
     const [search, setSearch] = useState('')
     const [firstRender, setFirstRender] = useState(true);
-
+   console.log(match)
 
     const handleClick = (target) => {
         setFirstRender(false)
@@ -66,8 +63,6 @@ function RestaurantPage({ match }) {
 
                                 :
 
-
-
                                  <div className="main-content-welcome" >
                                     <div className="main-content-welcome-child" style={{paddingTop: 0}}>
                                         <h1 className="welcome-header" style={{paddingBottom: 0}}>{selectedResMenu[0].name} {console.log(selectedResMenu[0].name)}</h1>
@@ -113,7 +108,7 @@ function RestaurantPage({ match }) {
                                     <div className="restaurant-content" >
                                         <div className="restaurant-name-top">
                                             <div className="restaurant-name-top-header">
-                                                <Link style={{ color: "white" }} to={`/restaurant_page/${restaurant.id}`}> {restaurant.name} </Link>
+                                                {restaurant.name}
                                             </div>
                                             <h2 className="restaurant-price"> $$ </h2>
                                         </div>
@@ -123,10 +118,10 @@ function RestaurantPage({ match }) {
                                                 <h3 className="restaurant-cuisine-text">American Cuisine</h3>
                                             </div>
                                             <div style={{ display: "flex", justifyContent: "space-between", }}>
-                                                <h3 className="restaurant-reviews-text">3000 Reviews</h3>
+                                                <Link style={{color: "white"}} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
+                                                     <h3 className="restaurant-reviews-text">3000 Reviews</h3>
+                                                 </Link>
                                             </div>
-
-
 
                                                     <Collapsible triggerStyle={{display: "flex", alignItems: "center",  flexDirection: "column"}} trigger="View Menu">
                                                         <div style={{display: "flex", alignItems: "center",  flexDirection: "column"}}>
@@ -137,7 +132,7 @@ function RestaurantPage({ match }) {
                                                                     <div className="menu-item-card-content" style={{display: "flex", paddingBottom: "3%"}}>
                                                                         <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image}/></div>
                                                                         <div className="menu-item-card-details" style={{marginRight: "23px", paddingLeft: "20px"}}>
-                                                                            <p className="menu-item-card-name" style={{fontSize: "16px", margin:"0px"}}>{menuItem.name} </p>
+                                                                           <Link style={{color: "white"}}to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" style={{fontSize: "16px", margin:"0px"}}>{menuItem.name} </p> </Link>
                                                                             <div className="menu-item-card-description" style={{fontSize: "10px"}}>
                                                                                 {menuItem.description}
                                                                             </div>
@@ -150,8 +145,6 @@ function RestaurantPage({ match }) {
 
                                                         </div>
                                                     </Collapsible>
-
-
 
                                         </div>
                                     </div>

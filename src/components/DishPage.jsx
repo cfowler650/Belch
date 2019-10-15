@@ -96,7 +96,7 @@ class DishPage extends React.Component {
                         >
                             <div className="dish-button-group">
                                 <button onClick={this.handleReturnToMenu}>
-                                    Menu
+                                    Restaurants
                                 </button>
                                 <button onClick={this.prevDish}>
                                     Prev Dish
