@@ -27,15 +27,16 @@ const starGenerator = rating => {
 
 const UserReview = ({ review, author, starCount }) => {
     return (
-        <div className="review-container">
+        <div className="review-container" style={{padding: "25px"}}>
             <img
                 className="avatar-image-review"
                 src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
+
             />
-            <div className="review-content">
-                <div style={{ width: "500px" }}>
-                    {review}
-                    {author}
+            <div className="review-content" style={{paddingLeft: "24px"}}>
+                <div style={{ fontSize: "24px" }}>
+                  <p>  {review} </p>
+                  <p>  {author} </p>
                 </div>
                 <div>{starGenerator(starCount)}</div>
             </div>

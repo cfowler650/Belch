@@ -90,17 +90,10 @@ class DishPage extends React.Component {
             <StyledDishPage>
                 <>
                   <div className="nav-bar">
-                            <div className="belch-title-div">
+                            <div className="belch-title-div" style={{flex:1}}>
                                 <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
                             </div>
-                   </div>
-                    {thisDish ? (
-                        <div
-                            className="dish-page-container"
-                            style={{ textAlign: "center" }}
-                        >
-                            <div className="test">
-                                    <div className="dish-button-group">
+                            <div className="dish-button-group">
                                         <button onClick={this.handleReturnToMenu}>
                                             Restaurants
                                         </button>
@@ -111,9 +104,19 @@ class DishPage extends React.Component {
                                             Next Dish
                                         </button>
                                     </div>
+                                      <div className="right-divider" style={{flex:1}}>
+
+                                    </div>
+                   </div>
+                    {thisDish ? (
+                        <div
+                            className="dish-page-container"
+                            style={{ textAlign: "center" }}
+                        >
+                            <div className="test">
 
                                     <div className="dish-container">
-                                        <h1>{thisDish.name}</h1>
+                                        <h1 className="dish-name-h1">{thisDish.name}</h1>
                                         <img
                                             className="main-dish-image"
                                             src={thisDish.image}
@@ -129,6 +132,7 @@ class DishPage extends React.Component {
                     ) : (
                         <div>Loading...</div>
                     )}
+                    <div className="footer">Footer</div>
                 </>
             </StyledDishPage>
         );

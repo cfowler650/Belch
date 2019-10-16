@@ -91,13 +91,14 @@ const ReviewsController = ({ reviews }) => {
         <div className="bottom-content-child">
             <div className="sort-section-container">
                 <h2>Sort By:</h2>
-                <div className="sort-button-group">
+                <div className="sort-button-group" >
                     <button
                         name="highest"
                         onClick={handleActiveItemClick}
                         style={{
                             padding: "0 1%",
-                            textDecoration: "underline"
+                            textDecoration: "underline",
+                            color: "white"
                         }}
                     >
                         highest
@@ -106,7 +107,8 @@ const ReviewsController = ({ reviews }) => {
                     <button
                         name="lowest"
                         style={{
-                            textDecoration: "underline"
+                            textDecoration: "underline",
+                            color: "white"
                         }}
                         onClick={handleActiveItemClick}
                     >

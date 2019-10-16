@@ -120,7 +120,7 @@ const StyledRestaurantPage = styled.div`
         padding-right: 4%
     }
     .top-rated-dish-content {
-        style={{ paddingLeft: "3%", flexDirection: "column", justifyContent: "space-evenly"}}
+        // style={{ paddingLeft: "3%", flexDirection: "column", justifyContent: "space-evenly"}}
         padding-left: 3%;
         flex-direction: column;
         justify-content: space-evenly;

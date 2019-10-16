@@ -4,6 +4,7 @@ let data = [
         name: "Burger King",
         hours: "6am-5pm",
         image: "/images/burger.jpg",
+        location: ['mountain view', 'california'],
         menuItems: [
             {
                 id: 1,
