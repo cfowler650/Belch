@@ -174,12 +174,15 @@ const StyledRestaurantPage = styled.div`
     .rendered-child-image-div {
         display: flex;
         max-width: 600px;
+
+    min-height: 400px;
     }
 
     .rendered-child-image {
         flex: 1;
-        max-width: 100%;
-        max-height: 207px;
+        // max-width: 100%;
+        // max-height: 207px;
+       min-width: 400px;
     }
 
 
@@ -189,6 +192,8 @@ const StyledRestaurantPage = styled.div`
         // background: url('https://www.marineroom.com/resourcefiles/homeimages/the-marine-room-restaurant-in-la-jolla-top4.jpg');
         background: url('https://ak6.picdn.net/shutterstock/videos/17127316/thumb/1.jpg');
        background-size: cover;
+
+        //    padding-top: 75px;
 
         background-color: rgb(0, 0, 0); /* Fallback color */
         background-color: rgba(0, 0, 0, 0.6); /* Black w/opacity/see-through */
@@ -201,7 +206,7 @@ const StyledRestaurantPage = styled.div`
         padding-bottom: 5%;
         color: white;
         margin: 12px;
-
+    padding-top: 1%
     }
 
     .main-content-welcome-child {

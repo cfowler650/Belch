@@ -70,7 +70,7 @@ function RestaurantPage({ match }) {
                                                 <img className="rendered-child-image" src={selectedResMenu[0].image} />
                                         </div>
                                         <p style={{color: "white"}}>Best item at {selectedRestaurant.name}</p>
-                                        <div style={{ background: "black", width: "100%" }}>
+                                        <div className="search-bar-container"style={{ background: "black", width: "100%", marginTop: "1%" }}>
                                             <div className="restaurants-header">
                                                 <div className="restaurant-h1">
                                                      <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
