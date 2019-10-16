@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const StyledRestaurantPage = styled.div`
     .restaurant-card {
-        width: 60%;
+        // width: 60%;
+        width: 70%;
         align-items: flex-start;
         display: flex;
         margin: 8px;
@@ -14,6 +15,8 @@ const StyledRestaurantPage = styled.div`
         padding-top: 1px;
         padding-left: 0px;
         padding-right: 0px;
+        margin-bottom: 1%;
+        margin-top: 1%;
 
 
     }
@@ -27,43 +30,84 @@ const StyledRestaurantPage = styled.div`
         width: 100%;
         padding: 0;
         margin: 1px;
+        color: black;
 
     }
 
+    .collapsible-title {
+            display: flex;
+
+    align-items: flex-end;
+    flex-direction: column;
+    font-size: 28px;
+
+    padding-bottom: 1.5%;
+    padding-top: 1.5%;
+    background: #d7ddde;
+    }
+
+    .collapsible-title .span {
+            width: 100%;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        font-size: 30px;
+        padding-right: 2%;
+        ont-size: 28px;
+        padding-bottom: 1.5%;
+        padding-top: 1.5%;
+        background: #d7ddde;
+    }
     .restaurant-name-top{
-        background: rgb(76, 148, 151);
+          background: #d7ddde;
         width: 100%;
         padding: 6px;
         display: flex;
         justify-content: space-between;
+        color: black;
+         font-size: 24px;
+         padding-top: 1%;
+         padding-bottom: 1%;
     }
     .restaurant-name-top-header{
         // width: 200px;
-        font-size: 20px;
+        font-size: 36px;
         font-weight: bold;
-         padding-left: 6px;
-         color: white;
+
+             text-align: center;
+
     }
     .restaurant-price {
         font-size: 30;
         font-family: "Ribeye";
         margin: 0px;
-        color: white;
+        color: black;
+            flex: 1;
+    text-align: right;
+
     }
     .restaurant-inner-content {
-         color: white;
+         color: black;
          width: 100%;
-         background: #1D7C7F;
+         background: white;
+
+             padding-top: 1%;
+
     }
     .restaurant-cuisine-text {
         margin: 0;
         padding-left: 12px;
+
+        font-size: 30px;
     }
 
     .restaurant-reviews-text {
         margin:0;
         padding-left: 12px;
         padding-top: 0.5%;
+        background-color: white;
+            font-size: 24px;
+
     }
 
       .restaurant-distance-text {

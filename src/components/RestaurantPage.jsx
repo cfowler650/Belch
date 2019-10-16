@@ -107,9 +107,11 @@ function RestaurantPage({ match }) {
 
                                     <div className="restaurant-content" >
                                         <div className="restaurant-name-top">
+                                            <div className="top-left-divider" style={{flex: 1}}></div>
                                             <div className="restaurant-name-top-header">
                                                 {restaurant.name}
                                             </div>
+
                                             <h2 className="restaurant-price"> $$ </h2>
                                         </div>
 
@@ -118,12 +120,13 @@ function RestaurantPage({ match }) {
                                                 <h3 className="restaurant-cuisine-text">{restaurant.cuisine}</h3>
                                             </div>
                                             <div style={{ display: "flex", justifyContent: "space-between", }}>
-                                                <Link style={{color: "white"}} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
+                                                <Link style={{color: "black", paddingBottom: "1%"}} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
                                                      <h3 className="restaurant-reviews-text">{restaurant.total_reviews} Reviews</h3>
                                                  </Link>
                                             </div>
 
-                                                    <Collapsible triggerStyle={{display: "flex", alignItems: "center",  flexDirection: "column"}} trigger="View Menu">
+                                                    <Collapsible triggerStyle={{display: "flex", alignItems: "flex-end",  flexDirection: "column", fontSize: "28px", paddingRight: "2%",
+                                                    width: "100%", paddingBottom: "1.5%", paddingTop: "1.5%", background: "#d7ddde"}} trigger="Best Dishes">
                                                         <div style={{display: "flex", alignItems: "center",  flexDirection: "column"}}>
 
                                                             <div className="menu-item-list-container" style={{display: "flex", alignItems: "center",  flexDirection: "column", paddingTop: "15px", width:"100%"}}>
