@@ -127,7 +127,7 @@ function RestaurantPage({ match }) {
                                                         <div style={{display: "flex", alignItems: "center",  flexDirection: "column"}}>
 
                                                             <div className="menu-item-list-container" style={{display: "flex", alignItems: "center",  flexDirection: "column", paddingTop: "15px", width:"100%"}}>
-                                                             {restaurant.menuItems.map(menuItem => (
+                                                             {restaurant.menuItems.slice(0, 3).map(menuItem => (
                                                                 <div className="menu-item-card" style={{width: "100%"}}>
                                                                     <div className="menu-item-card-content" style={{display: "flex", paddingBottom: "3%"}}>
                                                                         <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image}/></div>
@@ -152,7 +152,7 @@ function RestaurantPage({ match }) {
 
                             ))}
 
-                                {console.log(filteredRestaurants)}
+
 
                         </div>
                     </div>

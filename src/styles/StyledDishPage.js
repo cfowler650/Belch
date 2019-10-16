@@ -43,9 +43,10 @@ const StyledDishPage = styled.div`
     .footer {
         height: 20px;
         background-color: #222;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         width:100%;
+        color: #222;
     }
 
     .sort-section-container {

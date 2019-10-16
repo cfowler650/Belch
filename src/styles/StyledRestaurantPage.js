@@ -265,7 +265,7 @@ button:focus {
     }
 
     .sticky-parent-1 {
-        width: 50%;
+        width: 70%;
 
          background: rgb(34, 34, 34);
     }
