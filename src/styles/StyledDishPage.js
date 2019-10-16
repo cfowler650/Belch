@@ -46,6 +46,22 @@ const StyledDishPage = styled.div`
         text-align: initial;
     }
 
+    .nav-bar{
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        background: black;
+        // box-shadow: 0 4px 10px -2px #C6961D;
+    }
+     .belch-title-div {
+        padding-left: 2%;
+    }
+
+    .belch-title {
+        padding-left: 2%;
+        font-size: 30px;
+        color: white;
+    }
     .review-container {
         // border: 2px solid blue;
         width: 100%;

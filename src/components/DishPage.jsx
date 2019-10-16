@@ -89,35 +89,43 @@ class DishPage extends React.Component {
         return (
             <StyledDishPage>
                 <>
+                  <div className="nav-bar">
+                            <div className="belch-title-div">
+                                <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
+                            </div>
+                   </div>
                     {thisDish ? (
                         <div
                             className="dish-page-container"
                             style={{ textAlign: "center" }}
                         >
-                            <div className="dish-button-group">
-                                <button onClick={this.handleReturnToMenu}>
-                                    Restaurants
-                                </button>
-                                <button onClick={this.prevDish}>
-                                    Prev Dish
-                                </button>
-                                <button onClick={this.nextDish}>
-                                    Next Dish
-                                </button>
-                            </div>
+                            <div className="test">
+                                    <div className="dish-button-group">
+                                        <button onClick={this.handleReturnToMenu}>
+                                            Restaurants
+                                        </button>
+                                        <button onClick={this.prevDish}>
+                                            Prev Dish
+                                        </button>
+                                        <button onClick={this.nextDish}>
+                                            Next Dish
+                                        </button>
+                                    </div>
 
-                            <div className="dish-container">
-                                <h1>{thisDish.name}</h1>
-                                <img
-                                    className="main-dish-image"
-                                    src={thisDish.image}
-                                />
-                            </div>
+                                    <div className="dish-container">
+                                        <h1>{thisDish.name}</h1>
+                                        <img
+                                            className="main-dish-image"
+                                            src={thisDish.image}
+                                        />
+                                    </div>
 
-                            <div className="bottom-content-container">
-                                <ReviewsController reviews={thisDish.reviews} />
+                                    <div className="bottom-content-container">
+                                        <ReviewsController reviews={thisDish.reviews} />
+                                    </div>
                             </div>
                         </div>
+
                     ) : (
                         <div>Loading...</div>
                     )}
