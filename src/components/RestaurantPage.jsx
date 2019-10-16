@@ -115,11 +115,11 @@ function RestaurantPage({ match }) {
 
                                         <div className="restaurant-inner-content">
                                             <div>
-                                                <h3 className="restaurant-cuisine-text">American Cuisine</h3>
+                                                <h3 className="restaurant-cuisine-text">{restaurant.cuisine}</h3>
                                             </div>
                                             <div style={{ display: "flex", justifyContent: "space-between", }}>
                                                 <Link style={{color: "white"}} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
-                                                     <h3 className="restaurant-reviews-text">3000 Reviews</h3>
+                                                     <h3 className="restaurant-reviews-text">{restaurant.total_reviews} Reviews</h3>
                                                  </Link>
                                             </div>
 

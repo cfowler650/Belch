@@ -38,7 +38,7 @@ const StyledRestaurantPage = styled.div`
         justify-content: space-between;
     }
     .restaurant-name-top-header{
-        width: 200px;
+        // width: 200px;
         font-size: 20px;
         font-weight: bold;
          padding-left: 6px;
@@ -266,7 +266,7 @@ button:focus {
 
     .sticky-parent-1 {
         width: 50%;
-         height: 100vh;
+
          background: rgb(34, 34, 34);
     }
 
