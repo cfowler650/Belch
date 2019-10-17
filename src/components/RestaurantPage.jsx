@@ -141,6 +141,7 @@ function RestaurantPage({ match }) {
                                                                         <Link style={{ color: "white" }} to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" >{menuItem.name} </p> </Link>
                                                                         <div className="menu-item-card-description" >
                                                                             {menuItem.description.substr(0, 123)}..
+                                                                            //
                                                                         </div>
                                                                     </div>
                                                                 </div>
