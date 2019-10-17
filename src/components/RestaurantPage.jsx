@@ -109,7 +109,8 @@ function RestaurantPage({ match }) {
                                         <div className="restaurant-name-top">
                                             <div className="top-left-divider" style={{ flex: 1 }}></div>
                                             <div className="restaurant-name-top-header">
-                                                {restaurant.name}
+                                                <Link style={{}} to={`/restaurant_page/${restaurant.id}`}>{restaurant.name}
+                                                </Link>
                                             </div>
 
                                             <h2 className="restaurant-price"> $$ </h2>
@@ -131,15 +132,15 @@ function RestaurantPage({ match }) {
                                             }} trigger="Best Dishes">
                                                 <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
 
-                                                    <div className="menu-item-list-container" style={{ display: "flex", alignItems: "center", flexDirection: "column", paddingTop: "15px", width: "100%" }}>
+                                                    <div className="menu-item-list-container" >
                                                         {restaurant.menuItems.slice(0, 3).map(menuItem => (
                                                             <div className="menu-item-card" style={{ width: "100%" }}>
-                                                                <div className="menu-item-card-content" style={{ display: "flex", paddingBottom: "3%" }}>
+                                                                <div className="menu-item-card-content" >
                                                                     <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image} /></div>
                                                                     <div className="menu-item-card-details" style={{ marginRight: "23px", paddingLeft: "20px" }}>
-                                                                        <Link style={{ color: "white" }} to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" style={{ fontSize: "16px", margin: "0px" }}>{menuItem.name} </p> </Link>
-                                                                        <div className="menu-item-card-description" style={{ fontSize: "10px" }}>
-                                                                            {menuItem.description}
+                                                                        <Link style={{ color: "white" }} to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" >{menuItem.name} </p> </Link>
+                                                                        <div className="menu-item-card-description" >
+                                                                            {menuItem.description.substr(0, 123)}..
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -169,58 +170,3 @@ function RestaurantPage({ match }) {
 
 
 export default RestaurantPage;
-
-
-
-// const MainContent = ({ selectedRestaurant }) => {
-
-//     return (
-//         <>
-//             {
-//                 selectedRestaurant
-
-//                     ?
-
-//                     <div className="main-content-rendered">
-//                         <div className="main-content-rendered-child">
-//                             <div className="rendered-child-image-div">
-//                                 <img className="rendered-child-image" src={selectedRestaurant.image} />
-//                             </div>
-//                         </div>
-
-//                         <div className="main-content-rendered-child-2">
-//                             <div className="top-rated-dish-content">
-//                                 {
-//                                     selectedRestaurant.menuItems !== undefined
-
-//                                         ?
-
-//                                         <>
-//                                             <h3> Top Dish At {selectedRestaurant.name}</h3>
-//                                             <h1>{selectedRestaurant.menuItems[0].name}</h1>
-//                                             <h3 style={{ fontSize: "16px" }}>{selectedRestaurant.menuItems[0].description}</h3>
-//                                         </>
-
-//                                         :
-
-//                                         <p></p>
-//                                 }
-//                             </div>
-//                         </div>
-//                     </div>
-
-//                     :
-
-//                     <div className="main-content-welcome" style={{}}>
-//                         <div className="main-content-welcome-child" style={{}}>
-//                             <h1 className="welcome-header">Welcome to Belch, choose a restaurant to get started</h1>
-//                             <div className="restaurants-header">
-//                                 Restaurants
-//                                 </div>
-//                         </div>
-//                     </div>
-//             }
-//         </>
-//     );
-
-// }

@@ -15,29 +15,34 @@ const LoginModal = () => {
         <>
             <div className="bg-text" style={{ display: "flex", flexDirection: "column" }}>
                 <div>
-                    <h2 style={{ fontSize: "30px" }}>Sign Up</h2>
+                    <h2 className="sign-up-header">Create an account</h2>
                     <div className="login-container" >
+                        <h5 className="email-h5">Email</h5>
                         <input className="auth-input-field"
-                            type="text"
-
-                            placeholder="   Choose a username..."
-                        />
+                            type="text" />
+                        <h5 className="email-h5" style={{ paddingRight: "71.5%", marginTop: "13px" }}>Password</h5>
                         <input
                             className="auth-input-field"
                             type="text"
 
-                            placeholder="   Create a password..."
+
                         />
 
                         <p>Already a member? Click here.</p>
                     </div>
 
                 </div>
+                <div className="guest-button">
+                    <Link to={`/restaurant_page`} style={{
+                        padding: "4%",
+                        background: "#222",
+                        width: "380px"
+                    }}>Continue as guest...</Link>
+                </div>
 
 
-                <p>
-                    <Link to={`/restaurant_page`}>Continue as guest...</Link>
-                </p>
+
+
             </div>
         </>
     );

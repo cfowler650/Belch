@@ -30,8 +30,33 @@ const StyledHomePage = styled.div`
             min-width:0;
             width: 87%;
             flex: 1;
-                padding: 3%;
-}
+            padding: 3%;
+            font-size: 1em;
+    }
+
+    .email-h5 {
+        margin: 0;
+    padding-right: 78%;
+    // font-size: 0.8em;
+        font-weight: 600;
+    text-transform: uppercase;
+        font-size: 12px;
+    line-height: 16px;
+
+    }
+
+    .sign-up-header {
+        font-size: 30px;
+        margin: 12px;
+    }
+    .guest-button {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+        margin: 0px;
+        margin-top: 9px;
+    }
+
     }
     //black gradient over image control..
     .bg-image-div::after {

@@ -307,14 +307,37 @@ const StyledRestaurantPage = styled.div`
     .menu-item-card-image {
         max-width: 100%;
         max-height: 100%;
+            border: 3px solid rgb(215, 221, 222);
+    }
+    .menu-item-card-name {
+        font-size: 16px;
+        margin: 0px;
+        color: black;
+        text-transform: uppercase;
+    }
+    .menu-item-card-description {
+         font-size: 12.5px;
+    line-height: 20px;
     }
 
-    input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
+    .menu-item-card-content {
+        display: flex;
+        padding-bottom: 1%;
+    }
+    .menu-item-list-container {
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       padding-top: 12px;
+       width: 100%;
+
+    }
+        input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+        outline: none;
+    }
     .restaurant-h1:before, .restaurant-h1:after {
        content: '';
        border-top: 2px solid;
@@ -363,7 +386,7 @@ button:focus {
     }
 
     .bottom-content-container {
-        padding-top: 10px;
+        padding-top: 2px;
         margin-bottom: 200px;
         display: flex;
         align-items: center;
