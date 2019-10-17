@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
     html {
         overflow: auto;
         margin: 0;
+        background:black;
     }
  * {
 

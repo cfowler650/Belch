@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledRestaurantPage = styled.div`
     .restaurant-card {
         // width: 60%;
-        width: 70%;
+        width: 50%;
         align-items: flex-start;
         display: flex;
         margin: 8px;
@@ -19,6 +19,12 @@ const StyledRestaurantPage = styled.div`
         margin-top: 1%;
 
 
+    }
+
+    @media screen and (min-width: 1430px) {
+       .restaurant-card {
+           width: 70%
+       }
     }
 
     .restaurant-content {
@@ -59,31 +65,33 @@ const StyledRestaurantPage = styled.div`
         background: #d7ddde;
     }
     .restaurant-name-top{
-          background: #d7ddde;
+        background: #d7ddde;
         width: 100%;
-        padding: 6px;
+        padding: 3px;
         display: flex;
         justify-content: space-between;
         color: black;
          font-size: 24px;
-         padding-top: 1%;
-         padding-bottom: 1%;
+        //  padding-top: 1%;
+        //  padding-bottom: 1%;
     }
     .restaurant-name-top-header{
         // width: 200px;
-        font-size: 36px;
+    font-size: 24px;
         font-weight: bold;
 
              text-align: center;
 
     }
     .restaurant-price {
-        font-size: 30;
+        font-size: 26px;
         font-family: "Ribeye";
         margin: 0px;
         color: black;
             flex: 1;
     text-align: right;
+    padding: 2px;
+
 
     }
     .restaurant-inner-content {
@@ -97,8 +105,7 @@ const StyledRestaurantPage = styled.div`
     .restaurant-cuisine-text {
         margin: 0;
         padding-left: 12px;
-
-        font-size: 30px;
+       font-size: 18px;
     }
 
     .restaurant-reviews-text {
@@ -106,7 +113,7 @@ const StyledRestaurantPage = styled.div`
         padding-left: 12px;
         padding-top: 0.5%;
         background-color: white;
-            font-size: 24px;
+        font-size: 18px;
 
     }
 
@@ -173,16 +180,17 @@ const StyledRestaurantPage = styled.div`
 
     .rendered-child-image-div {
         display: flex;
-        max-width: 600px;
 
-    min-height: 400px;
+        max-width: 400px;
+    max-height: 243px;
+
     }
 
     .rendered-child-image {
         flex: 1;
         // max-width: 100%;
         // max-height: 207px;
-       min-width: 400px;
+          min-width: 250px;
     }
 
 
@@ -203,15 +211,50 @@ const StyledRestaurantPage = styled.div`
 
      .welcome-header {
         letter-spacing: 4px;
-        padding-bottom: 5%;
+        padding-bottom: 9%;
+        padding-top: 9%;
         color: white;
         margin: 12px;
-    padding-top: 1%
+
     }
+
+
+   @media screen and (min-width: 1500px) {
+            .welcome-header {
+                letter-spacing: 4px;
+                padding-bottom: 7%;
+                padding-top: 7%;
+                color: white;
+                margin: 12px;
+
+         }
+
+      .rendered-child-image-div {
+          max-height: 300px;
+            max-width: 500px;
+      }
+
+      .rendered-child-image {
+          min-width: 300px;
+      }
+
+
+
+    }
+
+
+     .welcome-header-rendered {
+        letter-spacing: 4px;
+
+        color: white;
+        margin: 12px;
+
+    }
+
 
     .main-content-welcome-child {
 
-       padding-top: 7%;
+    //    padding-top: 8%;
        display: flex;
 
        min-width: 100%;
@@ -247,8 +290,8 @@ const StyledRestaurantPage = styled.div`
        font-size: 30px;
        color: white;
        background:  black;
-       padding-top: 0.5%;
-       padding-bottom: 0.5%;
+       padding-top: 1%;
+       padding-bottom: 1%;
 
     }
 
@@ -309,7 +352,7 @@ button:focus {
 
     .belch-title {
         padding-left: 2%;
-        font-size: 30px;
+        font-size: 26px;
         color: white;
     }
 

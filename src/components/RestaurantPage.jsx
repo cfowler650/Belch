@@ -12,7 +12,7 @@ function RestaurantPage({ match }) {
     const [selectedResMenu, setselectedResMenu] = useState([]);
     const [search, setSearch] = useState('')
     const [firstRender, setFirstRender] = useState(true);
-   console.log(match)
+    console.log(match)
 
     const handleClick = (target) => {
         setFirstRender(false)
@@ -21,12 +21,12 @@ function RestaurantPage({ match }) {
     }
 
     const updateSearch = (e) => {
-        setSearch(e.target.value.substr(0, 25) )
+        setSearch(e.target.value.substr(0, 25))
     }
 
     let filteredRestaurants = restaurants.filter(
         (res) => {
-           return res.name.toLowerCase().includes(search.toLowerCase());
+            return res.name.toLowerCase().includes(search.toLowerCase());
         }
     )
     return (
@@ -49,11 +49,11 @@ function RestaurantPage({ match }) {
                                 <div className="main-content-welcome" >
                                     <div className="main-content-welcome-child">
                                         <h1 className="welcome-header">Where are you eating today?</h1>
-                                        <p style={{color: "white"}}>We'll let you know the best item to order on the menu.</p>
+                                        {/* <p style={{ color: "white" }}>We'll let you know the best item to order on the menu.</p> */}
                                         <div style={{ background: "black", width: "100%" }}>
                                             <div className="restaurants-header">
                                                 <div className="restaurant-h1">
-                                                     <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
+                                                    <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
                                                 </div>
 
                                             </div>
@@ -63,17 +63,17 @@ function RestaurantPage({ match }) {
 
                                 :
 
-                                 <div className="main-content-welcome" >
-                                    <div className="main-content-welcome-child" style={{paddingTop: 0}}>
-                                        <h1 className="welcome-header" style={{paddingBottom: 0}}>{selectedResMenu[0].name} {console.log(selectedResMenu[0].name)}</h1>
+                                <div className="main-content-welcome" >
+                                    <div className="main-content-welcome-child" style={{ paddingTop: 0 }}>
+                                        <h1 className="welcome-header-rendered" style={{}}>{selectedResMenu[0].name} {console.log(selectedResMenu[0].name)}</h1>
                                         <div className="rendered-child-image-div">
-                                                <img className="rendered-child-image" src={selectedResMenu[0].image} />
+                                            <img className="rendered-child-image" src={selectedResMenu[0].image} />
                                         </div>
-                                        <p style={{color: "white"}}>Best item at {selectedRestaurant.name}</p>
-                                        <div className="search-bar-container"style={{ background: "black", width: "100%", marginTop: "1%" }}>
+                                        {/* <p style={{ color: "white" }}>Best item at {selectedRestaurant.name}</p> */}
+                                        <div className="search-bar-container" style={{ background: "black", width: "100%", marginTop: "1%" }}>
                                             <div className="restaurants-header">
                                                 <div className="restaurant-h1">
-                                                     <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
+                                                    <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
                                                 </div>
 
                                             </div>
@@ -107,7 +107,7 @@ function RestaurantPage({ match }) {
 
                                     <div className="restaurant-content" >
                                         <div className="restaurant-name-top">
-                                            <div className="top-left-divider" style={{flex: 1}}></div>
+                                            <div className="top-left-divider" style={{ flex: 1 }}></div>
                                             <div className="restaurant-name-top-header">
                                                 {restaurant.name}
                                             </div>
@@ -120,34 +120,36 @@ function RestaurantPage({ match }) {
                                                 <h3 className="restaurant-cuisine-text">{restaurant.cuisine}</h3>
                                             </div>
                                             <div style={{ display: "flex", justifyContent: "space-between", }}>
-                                                <Link style={{color: "black", paddingBottom: "1%"}} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
-                                                     <h3 className="restaurant-reviews-text">{restaurant.total_reviews} Reviews</h3>
-                                                 </Link>
+                                                <Link style={{ color: "black", paddingBottom: "1%" }} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
+                                                    <h3 className="restaurant-reviews-text">{restaurant.total_reviews} Reviews</h3>
+                                                </Link>
                                             </div>
 
-                                                    <Collapsible triggerStyle={{display: "flex", alignItems: "flex-end",  flexDirection: "column", fontSize: "28px", paddingRight: "2%",
-                                                    width: "100%", paddingBottom: "1.5%", paddingTop: "1.5%", background: "#d7ddde"}} trigger="Best Dishes">
-                                                        <div style={{display: "flex", alignItems: "center",  flexDirection: "column"}}>
+                                            <Collapsible triggerStyle={{
+                                                display: "flex", alignItems: "flex-end", flexDirection: "column", fontSize: "18px", paddingRight: "2%",
+                                                width: "100%", paddingBottom: "0.5%", paddingTop: "0.5%", background: "#d7ddde"
+                                            }} trigger="Best Dishes">
+                                                <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
 
-                                                            <div className="menu-item-list-container" style={{display: "flex", alignItems: "center",  flexDirection: "column", paddingTop: "15px", width:"100%"}}>
-                                                             {restaurant.menuItems.slice(0, 3).map(menuItem => (
-                                                                <div className="menu-item-card" style={{width: "100%"}}>
-                                                                    <div className="menu-item-card-content" style={{display: "flex", paddingBottom: "3%"}}>
-                                                                        <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image}/></div>
-                                                                        <div className="menu-item-card-details" style={{marginRight: "23px", paddingLeft: "20px"}}>
-                                                                           <Link style={{color: "white"}}to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" style={{fontSize: "16px", margin:"0px"}}>{menuItem.name} </p> </Link>
-                                                                            <div className="menu-item-card-description" style={{fontSize: "10px"}}>
-                                                                                {menuItem.description}
-                                                                            </div>
+                                                    <div className="menu-item-list-container" style={{ display: "flex", alignItems: "center", flexDirection: "column", paddingTop: "15px", width: "100%" }}>
+                                                        {restaurant.menuItems.slice(0, 3).map(menuItem => (
+                                                            <div className="menu-item-card" style={{ width: "100%" }}>
+                                                                <div className="menu-item-card-content" style={{ display: "flex", paddingBottom: "3%" }}>
+                                                                    <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image} /></div>
+                                                                    <div className="menu-item-card-details" style={{ marginRight: "23px", paddingLeft: "20px" }}>
+                                                                        <Link style={{ color: "white" }} to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" style={{ fontSize: "16px", margin: "0px" }}>{menuItem.name} </p> </Link>
+                                                                        <div className="menu-item-card-description" style={{ fontSize: "10px" }}>
+                                                                            {menuItem.description}
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                             ))}
-
                                                             </div>
+                                                        ))}
 
-                                                        </div>
-                                                    </Collapsible>
+                                                    </div>
+
+                                                </div>
+                                            </Collapsible>
 
                                         </div>
                                     </div>

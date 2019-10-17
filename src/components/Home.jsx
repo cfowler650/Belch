@@ -13,40 +13,27 @@ const LoginModal = () => {
     return (
 
         <>
-            <div
-                className="bg-text"
-                style={{
-                    display: "flex",
-                    flexDirection: "column"
-                }}
-            >
+            <div className="bg-text" style={{ display: "flex", flexDirection: "column" }}>
                 <div>
                     <h2 style={{ fontSize: "30px" }}>Sign Up</h2>
-                    <div
-                        style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center"
-                        }}
-                    >
-                        <input
+                    <div className="login-container" >
+                        <input className="auth-input-field"
                             type="text"
-                            style={{
-                                width: "300px",
-                                height: "40px",
-                                marginBottom: "30px"
-                            }}
+
                             placeholder="   Choose a username..."
                         />
                         <input
+                            className="auth-input-field"
                             type="text"
-                            style={{ width: "300px", height: "40px" }}
+
                             placeholder="   Create a password..."
                         />
+
+                        <p>Already a member? Click here.</p>
                     </div>
+
                 </div>
 
-                <p>Already a member? Click here.</p>
 
                 <p>
                     <Link to={`/restaurant_page`}>Continue as guest...</Link>
@@ -74,38 +61,17 @@ function Home(props) {
                 <img
                     className="bg-image"
                     src="https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                    style={{ width: "100vw", height: "100vh" }}
+
                 />
             </div>
             <LoginModal />
-            <div
-                style={{
-                    zIndex: 2,
-                    position: "absolute",
-                    top: "0%",
-                    left: "0%",
-                    paddingLeft: "2%",
-                    paddingTop: "1%",
-                    width: "100vw",
-                    fontSize: "30px",
-                    color: "white"
-                }}
-            >
+            <div className="belch-nav-title">
                 Belch
             </div>
 
-            <div
-                style={{
-                    zIndex: 2,
-                    position: "absolute",
-                    paddingLeft: "94%",
-                    paddingTop: "1%",
-                    width: "50vw",
-                    height: "10vh",
-                    fontSize: "24px",
-                    color: "white"
-                }}
-            >
+            <div className="login-nav-title">
+
+
                 Login
             </div>
         </StyledHome>
