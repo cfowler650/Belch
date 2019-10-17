@@ -20,6 +20,7 @@ const StyledMenuPage = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+    ]
     }
   .dish-image-container {
       margin: 0;
@@ -42,6 +43,8 @@ width: 100%;
         margin: 2%;
         // border: 2px solid blue;
     }
+
+
 
 
     .nav-bar{
@@ -90,8 +93,8 @@ width: 100%;
     //   max-width: 250px;
     //     max-height: 250px;
     //     min-width: 250px;
-        min-width: 200px;
-        max-width: 200px;
+          min-width: 120px;
+    max-width: 120px;
     }
 
 
@@ -108,10 +111,45 @@ width: 100%;
     .dish-detail {
         color: black;
         // font-size: 16px;
-        font-size: 16px;
+        font-size: 14px;
         margin: 0.5vh;
         text-align: left;
+        line-height: 1.4em;
     }
+    .nav-button-link {
+        background: black;
+        font-size: 18px;
+        color: white;
+        border: none;
+        /* background: yellow; */
+        border-right: 2px solid #222;
+        padding: 0% 4%;
+
+
+    }
+      .nav-button-link-borderless {
+        background: black;
+        font-size: 18px;
+        color: white;
+        border: none;
+        /* background: yellow; */
+
+        padding: 0% 4%;
+
+
+    }
+
+    .right-divider {
+            display: flex;
+    align-items: center;
+    }
+}
+
+.nav-links {
+        display: flex;
+    align-items: flex-end;
+    padding-left: 30%;
+}
 
     .dish-name-h2 {
         margin: 0px;
