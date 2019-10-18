@@ -182,11 +182,11 @@ function Home(props) {
                 Belch
             </div>
 
-            <div className="login-nav-title">
+            {/* <div className="login-nav-title">
 
 
                 Login
-            </div>
+            </div> */}
         </StyledHome>
     );
 }
