@@ -48,14 +48,95 @@ class RestaurantMenuPage extends React.Component {
     render() {
         return (
             <StyledMenuPage>
+                <div className="background" style={{ position: "fixed", display: "flex", justifyContent: "center" }} > {/*this is the actual top container content*/}
+                    <div className="behind" style={{}}>
+                        <div className="res-name-container">
+                            <h1 style={{ fontSize: "40px", color: "white" }}>
+                                {this.state.dishes[0] !== undefined ? <>{this.state.dishes[0].res_name}</> : <p>Loading...</p>}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
 
-                <div className="menu-page-container" style={{ margin: "0" }}>
-                    <div className="sticky-container" style={{}}>
-                        <div className="nav-bar" style={{
-                            position: "sticky",
-                            top: 0,
-                            zIndex: "2"
-                        }}>
+
+                <div className="main-container" style={{ margin: "0" }}>
+                    <div className="sticky-container" >
+                        <div className="sticky-bar" id='sticky-bar-1'>
+                            <div className="content-top">
+                                <div className="belch-title-div" style={{}}>
+                                    <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
+                                </div>
+                                {/* <div className="nav-links" style={{}}>
+                                    <div className="nav-link-div" >
+                                        <Link className="nav-button-link" to={"/"}> Home </Link>
+                                    </div>
+                                    <div className="nav-link-div">
+                                        <Link className="nav-button-link" to={"/restaurant_page"}> Restaurants </Link>
+                                    </div>
+                                    <div className="nav-link-div">
+                                        <Link className="nav-button-link" > Account </Link>
+                                    </div>
+
+                                </div> */}
+
+                            </div>
+
+                            <div className="top-content-container-window" style={{ marginTop: "250px" }}>{/*this is window container size */}
+                            </div>
+                        </div>
+
+
+                        <div className="sticky-container-2">
+                            <div className="sticky-bar" id='sticky-bar-2'>
+                                <div className="belch-title-div">
+                                     <div className="restaurant-h1-div">
+                                             <h2 className="restaurant-h1">menu items </h2>
+                                        {/* <input type="text" className="restaurant-h1" placeholder="" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} /> */}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className="dishes-container">
+                                {this.state.dishes.map(dish => (
+                                    <div className="dish-card" key={dish.id}>
+                                        <div className="dish-image-container" >
+                                            <img className="dish-image" src={dish.image} />
+                                        </div>
+                                        <div className="dish-name-div">
+                                            <Link
+                                                to={`${this.props.match.url}/${dish.id}`}
+                                            >
+                                                <h2 className="dish-name-h2">
+                                                    {dish.name}
+                                                </h2>
+                                            </Link>
+                                            <p className="dish-detail">
+                                                {dish.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                                <div style={{ marginTop: "500px" }}></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </StyledMenuPage>
+        );
+    }
+}
+
+export default RestaurantMenuPage;
+
+
+
+
+
+{/* <div className="sticky-container" style={{}}>
+                    <div className="sticky-bar" id="sticky-bar-1">
+                        <div className="nav-bar-content" style={{ display: "flex" }}>
                             <div className="belch-title-div" style={{ flex: 1 }}>
                                 <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
                             </div>
@@ -76,46 +157,89 @@ class RestaurantMenuPage extends React.Component {
 
                                 </div>
                             </div>
-                        </div>
-                        <div className="parent" style={{ zIndex: "-1" }}>
-                            <div className="top-content-container" style={{}}>
-                                <div className="header-container">
-                                    <h1 style={{ fontSize: "40px", color: "white", position: "sticky", top: 0 }}>
-                                        {this.state.dishes[0] !== undefined ? <>{this.state.dishes[0].res_name}</> : <p>Loading...</p>}
-                                    </h1>
-                                </div>
-                            </div>
 
+                        </div>
+                        <div className="content-1">
+                            <div className="parent" style={{ zIndex: "-1" }}>
+                                <div className="top-content-container" style={{}}>
+                                    <div className="header-container">
+                                        <h1 style={{ fontSize: "40px", color: "white", position: "sticky", top: 0 }}>
+                                            {this.state.dishes[0] !== undefined ? <>{this.state.dishes[0].res_name}</> : <p>Loading...</p>}
+                                        </h1>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
-                    <div className="dishes-container">
+                    <div className="sticky-container-2">
+                        <div className="sticky-bar" id='sticky-bar-2' >
+                            <div className="dishes-container">
 
-                        {this.state.dishes.map(dish => (
-                            <div className="dish-card" key={dish.id}>
-                                <div className="dish-image-container" >
-                                    <img className="dish-image" src={dish.image} />
-                                </div>
-                                <div className="dish-name-div">
-                                    <Link
-                                        to={`${this.props.match.url}/${dish.id}`}
-                                    >
-                                        <h2 className="dish-name-h2">
-                                            {dish.name}
-                                        </h2>
-                                    </Link>
-                                    <p className="dish-detail">
-                                        {dish.description}
-                                    </p>
-                                </div>
+                                <div>Menu items</div>
+
+                                {this.state.dishes.map(dish => (
+                                    <div className="dish-card" key={dish.id}>
+                                        <div className="dish-image-container" >
+                                            <img className="dish-image" src={dish.image} />
+                                        </div>
+                                        <div className="dish-name-div">
+                                            <Link
+                                                to={`${this.props.match.url}/${dish.id}`}
+                                            >
+                                                <h2 className="dish-name-h2">
+                                                    {dish.name}
+                                                </h2>
+                                            </Link>
+                                            <p className="dish-detail">
+                                                {dish.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+
+                                <div style={{ marginTop: "500px" }}>test</div>
                             </div>
-                        ))}
+                        </div>
                     </div>
 
-                </div>
-            </StyledMenuPage>
-        );
-    }
-}
+                </div> */}
 
-export default RestaurantMenuPage;
+// <div className="content">
+//     content
+//     content
+//     content
+//     content
+//                                         </div>
+//     <div className="content">
+//         content
+//         content
+//         content
+//         content
+//                                         </div>
+//     <div className="content">
+//         content
+//         content
+//         content
+//         content
+//                                         </div>
+
+//     <div className="content">
+//         content
+//         content
+//         content
+//         content
+//                                         </div>
+//     <div className="content">
+//         content
+//         content
+//         content
+//         content
+//                                         </div>
+//     <div className="content">
+//         content
+//         content
+//         content
+//         content
+//                                         </div>
