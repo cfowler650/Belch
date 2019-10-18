@@ -26,23 +26,25 @@ const StyledHomePage = styled.div`
 
     .auth-input-field {
 
-            margin: 3% 10px;
+            margin: 3% 0px;
             min-width:0;
-            width: 87%;
+
             flex: 1;
             padding: 3%;
             font-size: 1em;
+                width: 100%;
     }
 
     .email-h5 {
         margin: 0;
-    padding-right: 78%;
+
     // font-size: 0.8em;
         font-weight: 600;
     text-transform: uppercase;
         font-size: 12px;
     line-height: 16px;
 
+    text-align: left;
     }
 
     .sign-up-header {
