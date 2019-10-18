@@ -50,23 +50,34 @@ class RestaurantMenuPage extends React.Component {
             <StyledMenuPage>
 
                 <div className="menu-page-container" style={{ margin: "0" }}>
-                    <div className="sticky-container" style={{ position: "sticky", top: 0 }}>
-                        <div className="nav-bar">
+                    <div className="sticky-container" style={{}}>
+                        <div className="nav-bar" style={{
+                            position: "sticky",
+                            top: 0,
+                            zIndex: "2"
+                        }}>
                             <div className="belch-title-div" style={{ flex: 1 }}>
                                 <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
                             </div>
-                            <div className="middle-divider" style={{ flex: 1 }}>
+                            <div className="middle-divider" style={{ width: "33%" }}>
 
                             </div>
                             <div className="right-divider" style={{ flex: 1 }}>
-                                <div className="nav-links">
-                                    <Link className="nav-button-link" to={"/"}> Home </Link>
-                                    <Link className="nav-button-link" to={"/restaurant_page"}> Restaurants </Link>
-                                    <Link className="nav-button-link-borderless" > Account </Link>
+                                <div className="nav-links" style={{}}>
+                                    <div className="nav-link-div" style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                                        <Link className="nav-button-link" to={"/"}> Home </Link>
+                                    </div>
+                                    <div className="nav-link-div" style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                                        <Link className="nav-button-link" to={"/restaurant_page"}> Restaurants </Link>
+                                    </div>
+                                    <div className="nav-link-div" style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+                                        <Link className="nav-button-link" > Account </Link>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                        <div className="parent">
+                        <div className="parent" style={{ zIndex: "-1" }}>
                             <div className="top-content-container" style={{}}>
                                 <div className="header-container">
                                     <h1 style={{ fontSize: "40px", color: "white", position: "sticky", top: 0 }}>

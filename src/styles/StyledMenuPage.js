@@ -45,8 +45,6 @@ width: 100%;
     }
 
 
-
-
     .nav-bar{
         display: flex;
 
@@ -54,14 +52,17 @@ width: 100%;
         background: black;
         // box-shadow: 0 4px 10px -2px #C6961D;
     }
+
+
      .belch-title-div {
-    padding-left: 2%;
+
     }
 
     .belch-title {
-        padding-left: 2%;
+
         font-size: 26px;
         color: white;
+            margin-left: 20px;
     }
 
     .menu-page-child-1 {
@@ -122,10 +123,15 @@ width: 100%;
         color: white;
         border: none;
         /* background: yellow; */
-        border-right: 2px solid #222;
-        padding: 0% 4%;
 
+        // padding: 0% 4%;
+        // width: 80px;
+        text-align: center;
 
+    }
+
+    .nav-link-div {
+        //   border-right: 2px solid #222;
     }
       .nav-button-link-borderless {
         background: black;
@@ -134,8 +140,8 @@ width: 100%;
         border: none;
         /* background: yellow; */
 
-        padding: 0% 4%;
-
+        // padding: 0% 4%;
+        box-sizing: content-box;
 
     }
 
@@ -146,9 +152,9 @@ width: 100%;
 }
 
 .nav-links {
-        display: flex;
-    align-items: flex-end;
-    padding-left: 30%;
+ display: inline-flex;
+width: 100%;
+
 }
 
     .dish-name-h2 {

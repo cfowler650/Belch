@@ -103,7 +103,7 @@ function RestaurantPage({ match }) {
 
                             {filteredRestaurants.map(restaurant => (
 
-                                <div onClick={() => handleClick(restaurant)} className="restaurant-card" key={restaurant.id}>
+                                <div onClick={() => handleClick(restaurant)} className="restaurant-card" key={restaurant.id} style={{ cursor: "pointer" }}>
 
                                     <div className="restaurant-content" >
                                         <div className="restaurant-name-top">
@@ -134,7 +134,7 @@ function RestaurantPage({ match }) {
 
                                                     <div className="menu-item-list-container" >
                                                         {restaurant.menuItems.slice(0, 3).map(menuItem => (
-                                                            <div className="menu-item-card" style={{ width: "100%" }}>
+                                                            <div className="menu-item-card" style={{ width: "100%" }} key={menuItem.id}>
                                                                 <div className="menu-item-card-content" >
                                                                     <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image} /></div>
                                                                     <div className="menu-item-card-details" style={{ marginRight: "23px", paddingLeft: "20px" }}>
