@@ -16,7 +16,7 @@ const starGenerator = rating => {
                     <li
                         className={star}
                         aria-hidden="true"
-                        style={{ margin: 0 }}
+                        style={{ margin: 0, color: "yellow" }}
                     />
                 );
             })}

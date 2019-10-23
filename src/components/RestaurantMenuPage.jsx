@@ -96,7 +96,7 @@ class RestaurantMenuPage extends React.Component {
                             <div className="sticky-bar" id='sticky-bar-2'>
                                 <div className="belch-title-div">
                                     <div className="restaurant-h1-div">
-                                        <h2 className="restaurant-h1" style={{fontSize: "24px", justifyContent: "none"}}>Popular Items </h2>
+                                        <h2 className="restaurant-h1" style={{fontSize: "24px", paddingTop: "2%"}}>Popular Items </h2>
                                         {/* <input type="text" className="restaurant-h1" placeholder="" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} /> */}
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@ class RestaurantMenuPage extends React.Component {
                                 <div style={{ marginTop: "500px" }}></div>
                             </div> */}
 
-                            <div className="main-content-contains" style={{paddingLeft: "117px", paddingRight:"117px"}}>
+                            <div className="main-content-contains" style={{paddingLeft: "105px", paddingRight:"105px"}}>
                                 <div className="new-container">
 
                               { this.state.dishes.map(dish => (

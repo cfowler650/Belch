@@ -16,7 +16,7 @@ const starGenerator = rating => {
                     <li
                         className={star}
                         aria-hidden="true"
-                        style={{ margin: 0 }}
+                        style={{ margin: 0, color: "gold" }}
                         key={Math.random(0, 1000000)} //this doesnt actaully have a unique id yet this just clears console error for now
                     />
                 );

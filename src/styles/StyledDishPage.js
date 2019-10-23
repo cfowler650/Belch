@@ -133,7 +133,9 @@ const StyledDishPage = styled.div`
         box-shadow: 0 1px #ffffff inset, 0 1px 3px rgba(34, 25, 25, 0.4);
         border-radius: 0.5%;
         padding: 3%;
-        background: white;
+        background: black;
+        color: white;
+        border: 1px solid #222;
     }
 
     .review-content {
