@@ -38,22 +38,39 @@ function RestaurantPage({ match }) {
 
             <div className="nav-container">
                 <div className="nav-1-2" style={{ zIndex: "3" }}>
-                    <Link to={"/"}> <h1 style={{ background: "black", padding: '1% 100px', color: "white", fontSize: "22px" }}>Belch</h1> </Link>
+                    <div>
+                    <Link to={"/"}> <h1 style={{ background: "black", padding: '1% 128px', color: "white", fontSize: "22px" }}>Belch</h1> </Link>
+                    {/* <div>
+                             <h1 style={{ background: "black", color: "white", paddingTop: "1%", paddingBottom: "0.5%", paddingLeft: "128px", fontSize: "18px" }}>
+                            <input type="text" value={search} onChange={updateSearch} className="search-bar" placeholder="Search" style={{ border: "none" }} />
+                        </h1>
+                    </div> */}
+                   </div>
                 </div>
 
                 <div className="img-div" style={{ background: "" }}>
                     <div className="header-text-div" >
                         <h1 className="welcome-header" style={{ paddingBottom: 0 }}>Where are you eating today?</h1>
                     </div>
-                    <img className="header-img" src="https://ak6.picdn.net/shutterstock/videos/17127316/thumb/1.jpg" />
+                    {/* <img className="header-img" src="https://ak6.picdn.net/shutterstock/videos/17127316/thumb/1.jpg" /> */}
+                    <div className="testing">
+                        <img className="header-img" src="https://images.unsplash.com/photo-1473993493174-19f58d45cb13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80" />
+                    </div>
                 </div>
 
                 <div className="nav-container" style={{ zIndex: "2", position: "relative" }}>
                     <div className="nav-main">
-                        <h1 style={{ background: "black", color: "white", padding: "0.5%", paddingLeft: "100px", fontSize: "24px" }}>Restaurants</h1>
+                         <h1 style={{ background: "black", color: "white", paddingTop: "2%", paddingBottom: "0.5%", paddingLeft: "128px", fontSize: "24px" }}>Restaurants</h1>
+
+                        {/* <h1 style={{ background: "black", color: "white", paddingTop: "1%", paddingBottom: "", paddingLeft: "128px", fontSize: "18px" }}>
+                            <input type="text" value={search} onChange={updateSearch} className="search-bar" placeholder="Search" style={{ border: "none" }} />
+                        </h1> */}
                     </div>
 
                     <div className="outer-container">
+
+
+
                         <div className="inner-container">
                             <div className="flex-container" >
 
@@ -64,8 +81,8 @@ function RestaurantPage({ match }) {
                                         <Link to={`/restaurant_page/${restaurant.id}`} style={{ cursor: "pointer" }}>
                                             <div className="content-diver">
                                                 <img src={restaurant.image} className="img-test" />
-                                                <div className="res-content">
-                                                    <h3 style={{ margin: 0, padding: 0, paddingTop: "12px", display: "flex", justifyContent: "space-between", fontSize: "16px" }}>
+                                                <div className="res-content" style={{color: "white"}}>
+                                                    <h3 style={{ margin: 0, padding: 0, paddingTop: "12px", display: "flex", justifyContent: "space-between", fontSize: "16px", color: "white" }}>
 
                                                         {restaurant.name}
 

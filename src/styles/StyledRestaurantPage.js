@@ -481,11 +481,11 @@ const StyledRestaurantPage = styled.div`
 
 h1 {
   margin: 0;
-  padding-bottom: 100px;
+
 }
 
 .nav-container {
-  background: white;
+  background: black;
 
 }
 
@@ -525,7 +525,19 @@ h1 {
     max-height: 500px;
     z-index: 1;
     position: relative;
+    object-fit: cover;
 }
+
+// testing::after {
+//    content: ""; // ::before and ::after both require content
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: linear-gradient(120deg, #eaee44, #33d0ff);
+//     opacity: .7;
+// }
 .nav-main {
    box-content: border-box;
   border: 1px solid black;
@@ -558,8 +570,8 @@ h1 {
     -webkit-box-pack: start;
     justify-content: flex-start;
     padding-bottom: 64px;
-    padding-top: 20px;
-    background: white;
+    padding-top: 0px;
+    background: black;
 
 }
 .content-test {
@@ -584,16 +596,35 @@ h1 {
 
 
 .content-diver {
-   margin: 24px;
+//    margin-top: 18px;
+//    margin-bottom: 18px;
+//    margin-left: 12px;
+//    margin-right: 25px;
+
+margin: 12px 12px 40px 26px;
 }
 
 .outer-container {
-  padding-left: 72px;
-  padding-right: 72px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
+
 
 .outer-container {
     background: black;
+}
+
+.search-bar {
+    background: black;
+    color: white;
+    font-size: 18px;
+    padding-bottom: 2.5%;
+    width: 400px;
+
+}
+
+input:focus {
+    outline-width: 0px;
 }
 `;
 

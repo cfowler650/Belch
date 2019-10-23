@@ -182,17 +182,79 @@ const StyledMenuPage = styled.div`
     .restaurant-h1 {
          display: flex;
     //    width: 30%;
-       justify-content: center;
-       align-items: center;
-       text-align: center;
+    //    justify-content: center;
+    //    align-items: center;
+    //    text-align: center;
        font-size: 30px;
        color: white;
        background:  black;
        padding-top: 1%;
-padding-bottom: 1%;
+        padding-bottom: 1%;
+        padding-left: 128px;
 
     }
 
+
+        .new-container {
+            padding-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+
+        .card-container {
+            width: calc(50% - 17.5px);
+            height: 128px;
+            margin: 16px 0px;
+            padding: 0px;
+            // border-width: 1px;
+            // border-style: solid;
+            // border-color: rgba(217, 219, 224, 0.5);
+            border-image: initial;
+        }
+
+        .card-description {
+            font-size: 14px;
+            letter-spacing: 0.14px;
+            font-weight: 400;
+            line-height: 1.43;
+            color: rgba(143, 149, 163, 0.9);
+            margin-bottom: 5px;
+        }
+
+            .card-price {
+                letter-spacing: -0.16px;
+                font-weight: 500;
+                color: rgb(0, 204, 153);
+                line-height: 20px;
+                font-size: 13px;
+                display: block;
+            }
+
+            .card-image-div {
+
+            width: 128px;
+            height: 128px;
+            display: flex;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+            }
+
+            .card-image {
+                background-image: url('https://raster-static.postmates.com/?url=https%3A%2F%2Fitems-static.postmat…ginal.jpg%3Fv%3D63707611050&quality=85&w=320&h=0&mode=auto&format=webp&v=4');
+                opacity: 1;
+            }
+
+            .dish-title {
+                font-size: 16px;
+                letter-spacing: -0.28px;
+                font-weight: 500;
+                line-height: normal;
+                margin: 0px;
+                color: white;
+            }
 `;
 export default StyledMenuPage;
 

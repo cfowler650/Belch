@@ -28,7 +28,7 @@ function Home(props) {
             </div>
             {/* <LoginModal /> */}
             <PostForm />
-            <div className="belch-nav-title">
+            <div className="belch-nav-title" style={{paddingLeft: "128px"}}>
                 Belch
             </div>
 

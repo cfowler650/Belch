@@ -91,7 +91,7 @@ class DishPage extends React.Component {
                 <>
                     <div className="nav-bar">
                         <div className="belch-title-div" style={{ flex: 1 }}>
-                            <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
+                            <Link to={'/'}><h1 className="belch-title" style={{paddingLeft: "128px"}}> Belch </h1></Link>
                         </div>
                         {/* <div className="dish-button-group">
                             <button onClick={this.handleReturnToMenu}>

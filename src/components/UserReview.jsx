@@ -33,8 +33,8 @@ const UserReview = ({ review, author, starCount }) => {
                 src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
 
             />
-            <div className="review-content" style={{paddingLeft: "24px"}}>
-                <div style={{ fontSize: "24px" }}>
+            <div className="review-content" style={{paddingLeft: "24px", height: "100px"}}>
+                <div className="review-text" style={{ fontSize: "14px" }}>
                   <p>  {review} </p>
                   <p>  {author} </p>
                 </div>

@@ -70,7 +70,7 @@ class RestaurantMenuPage extends React.Component {
                         <div className="sticky-bar" id='sticky-bar-1'>
                             <div className="content-top">
                                 <div className="belch-title-div" style={{}}>
-                                    <Link to={'/'}><h1 style={{ margin: 0, paddingLeft: "100px" }} className="belch-title"> Belch </h1></Link>
+                                    <Link to={'/'}><h1 style={{ margin: 0, paddingLeft: "128px" }} className="belch-title"> Belch </h1></Link>
                                 </div>
                                 {/* <div className="nav-links" style={{}}>
                                     <div className="nav-link-div" >
@@ -96,13 +96,13 @@ class RestaurantMenuPage extends React.Component {
                             <div className="sticky-bar" id='sticky-bar-2'>
                                 <div className="belch-title-div">
                                     <div className="restaurant-h1-div">
-                                        <h2 className="restaurant-h1">menu items </h2>
+                                        <h2 className="restaurant-h1" style={{fontSize: "24px", justifyContent: "none"}}>Popular Items </h2>
                                         {/* <input type="text" className="restaurant-h1" placeholder="" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} /> */}
                                     </div>
                                 </div>
                             </div>
 
-
+{/*
                             <div className="dishes-container">
                                 {this.state.dishes.map(dish => (
                                     <div className="dish-card" key={dish.id}>
@@ -124,7 +124,61 @@ class RestaurantMenuPage extends React.Component {
                                     </div>
                                 ))}
                                 <div style={{ marginTop: "500px" }}></div>
+                            </div> */}
+
+
+                             {/* <div className="dishes-container">
+                                {this.state.dishes.map(dish => (
+                                    <div className="dish-card" key={dish.id}>
+                                        <div className="dish-image-container" >
+                                            <img className="dish-image" src={dish.image} />
+                                        </div>
+                                        <div className="dish-name-div">
+                                            <Link
+                                                to={`${this.props.match.url}/${dish.id}`}
+                                            >
+                                                <h2 className="dish-name-h2">
+                                                    {dish.name}
+                                                </h2>
+                                            </Link>
+                                            <p className="dish-detail">
+                                                {dish.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                                <div style={{ marginTop: "500px" }}></div>
+                            </div> */}
+
+                            <div className="main-content-contains" style={{paddingLeft: "117px", paddingRight:"117px"}}>
+                                <div className="new-container">
+
+                              { this.state.dishes.map(dish => (
+                                    <div className="card-container" style={{display: "flex"}} key={dish.id}>
+                                        <div className="card-content" style={{display: "flex", justifyContent: "space-between", padding: "20px 20px 15px"}}>
+                                            <div className="card-text-1" style={{color: "white"}}>
+                                                <Link to={`${this.props.match.url}/${dish.id}`}>
+                                                     <h3 className="dish-title">  {dish.name} </h3>
+                                                </Link>
+                                                <div className="card-description">  {dish.description}
+                                                </div>
+                                                <div className="card-price" style={{color: "white"}}>
+                                                    <span>$8.39</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div className="card-image-div" style={{padding: "2px"}}>
+                                            <div style={{width: "128px", height: "128px"}} >
+                                                <img src={dish.image} style={{width: "100%"}}/>
+                                            </div>
+                                         </div>
+                                    </div>
+                              ))}
+
+
+                                </div>
                             </div>
+
 
                         </div>
                     </div>

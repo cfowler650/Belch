@@ -49,6 +49,24 @@ const StyledDishPage = styled.div`
         color: #222;
     }
 
+    button:focus {
+
+
+    outline: none !important;
+    // border-bottom: 1px solid red;
+    // box-shadow: 0 0 2px #719ECE;
+    box-shadow: 0 4px 2px -2px #719ECE;
+    }
+
+    // .sort-button-group::before {
+    //     content: "|";
+    //     padding: 0px 1%;
+    //     color: white;
+    //     position: relative;
+    //     // top: 0;
+    //     // left: 0;
+    // }
+
     .sort-section-container {
         display: flex;
         justify-content: center;
@@ -67,12 +85,13 @@ const StyledDishPage = styled.div`
     }
 
     .main-dish-image {
-        max-width: 500px;
-        min-height: 250px;
+        max-width: 300px;
+        min-height: 150px;
+        max-height: 225px;
     }
 
     .avatar-image-review {
-        // max-width: 70px;
+        max-width: 100px;
         text-align: initial;
     }
 
@@ -101,6 +120,10 @@ const StyledDishPage = styled.div`
         margin: 0;
 
     }
+
+    p {
+        margin-top: 0px;
+    }
     .review-container {
         // border: 2px solid blue;
         width: 100%;
@@ -117,7 +140,7 @@ const StyledDishPage = styled.div`
         display: flex;
         margin: 0 10px;
         flex-direction: column;
-        justify-content: center;
+        // justify-content: center;
         align-items: flex-start;
         width: 100%;
     }
@@ -151,6 +174,7 @@ const StyledDishPage = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        background: black;
     }
 
     .reviews-generator-container {
@@ -158,7 +182,7 @@ const StyledDishPage = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 60%;
+        width: 50%;
         text-align: initial;
         // border: 3px solid black;
     }
