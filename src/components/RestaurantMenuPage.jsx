@@ -39,7 +39,13 @@ class RestaurantMenuPage extends React.Component {
             .catch(data => {
                 debugger;
             });
+
+
+        window.scrollTo(0, 0) //rests scroll from previous page
+
     }
+
+
 
     handleReturnToMenu() {
         this.props.history.goBack();
@@ -64,7 +70,7 @@ class RestaurantMenuPage extends React.Component {
                         <div className="sticky-bar" id='sticky-bar-1'>
                             <div className="content-top">
                                 <div className="belch-title-div" style={{}}>
-                                    <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
+                                    <Link to={'/'}><h1 style={{ margin: 0, paddingLeft: "100px" }} className="belch-title"> Belch </h1></Link>
                                 </div>
                                 {/* <div className="nav-links" style={{}}>
                                     <div className="nav-link-div" >
@@ -89,8 +95,8 @@ class RestaurantMenuPage extends React.Component {
                         <div className="sticky-container-2">
                             <div className="sticky-bar" id='sticky-bar-2'>
                                 <div className="belch-title-div">
-                                     <div className="restaurant-h1-div">
-                                             <h2 className="restaurant-h1">menu items </h2>
+                                    <div className="restaurant-h1-div">
+                                        <h2 className="restaurant-h1">menu items </h2>
                                         {/* <input type="text" className="restaurant-h1" placeholder="" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} /> */}
                                     </div>
                                 </div>

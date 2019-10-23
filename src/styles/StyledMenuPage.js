@@ -39,10 +39,12 @@ const StyledMenuPage = styled.div`
     }
 
     .belch-title {
-        font-size: 26px;
+        font-size: 22px;
         color: white;
         margin-left: 20px;
             padding: 1% 0;
+            padding-left: 100px;
+            // padding-bottom: 20px;
     }
 
     .middle-divider {
@@ -80,7 +82,7 @@ const StyledMenuPage = styled.div`
     }
 
     .sticky-container-2 {
-        background:  #222;
+        background: black;
         margin: 0;
     }
 
@@ -93,7 +95,7 @@ const StyledMenuPage = styled.div`
     }
 
     #sticky-bar-2 {
-        top: 4em;
+        top: 3em;
     }
 
     .content {
@@ -185,7 +187,7 @@ const StyledMenuPage = styled.div`
        text-align: center;
        font-size: 30px;
        color: white;
-       background:  #222;
+       background:  black;
        padding-top: 1%;
 padding-bottom: 1%;
 

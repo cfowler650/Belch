@@ -35,6 +35,17 @@ const StyledHomePage = styled.div`
                 width: 100%;
     }
 
+    .form-button {
+        padding: "3%",
+        background: "darkblue",
+        width: "80%",
+        border: "none",
+        color: "white",
+        fontSize: "16px",
+        fontWeight: "500",
+        fontFamily: "Hind",
+        marginTop: "10px"
+    }
     .email-h5 {
         margin: 0;
 
@@ -118,10 +129,10 @@ const StyledHomePage = styled.div`
         position: absolute;
         top: 0%;
         left: 0%;
-        padding-left: 2%;
+        padding-left: 100px;
         padding-top: 1%;
         width: 100vw;
-        font-size: 30px;
+        font-size: 22px;
         color: white;
         // text-align: center;
     }
@@ -168,7 +179,7 @@ const StyledHomePage = styled.div`
     //everything macbook
     @media screen and (min-width: 1100px) {
         .bg-text {
-            width: 33%;
+            width: 35%;
         }
     }
 

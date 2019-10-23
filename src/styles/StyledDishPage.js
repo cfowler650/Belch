@@ -6,7 +6,7 @@ const StyledDishPage = styled.div`
             text-align: center;
     background-color: #222;
     position: absolute;
-    top: 88px;
+    top: 60px;
     bottom: 20px;
     width: 100%;
     }
@@ -89,13 +89,17 @@ const StyledDishPage = styled.div`
         // box-shadow: 0 4px 10px -2px #C6961D;
     }
      .belch-title-div {
-        padding-left: 2%;
+        // padding-left: 2%;
+
     }
 
     .belch-title {
-        padding-left: 2%;
-        font-size: 30px;
+       padding-left: 100px;
+       padding-top: 13px;
+    font-size: 22px;
         color: white;
+        margin: 0;
+
     }
     .review-container {
         // border: 2px solid blue;

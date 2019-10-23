@@ -89,25 +89,25 @@ class DishPage extends React.Component {
         return (
             <StyledDishPage>
                 <>
-                  <div className="nav-bar">
-                            <div className="belch-title-div" style={{flex:1}}>
-                                <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
-                            </div>
-                            <div className="dish-button-group">
-                                        <button onClick={this.handleReturnToMenu}>
-                                            Restaurants
+                    <div className="nav-bar">
+                        <div className="belch-title-div" style={{ flex: 1 }}>
+                            <Link to={'/'}><h1 className="belch-title"> Belch </h1></Link>
+                        </div>
+                        {/* <div className="dish-button-group">
+                            <button onClick={this.handleReturnToMenu}>
+                                Restaurants
                                         </button>
-                                        <button onClick={this.prevDish}>
-                                            Prev Dish
+                            <button onClick={this.prevDish}>
+                                Prev Dish
                                         </button>
-                                        <button onClick={this.nextDish}>
-                                            Next Dish
+                            <button onClick={this.nextDish}>
+                                Next Dish
                                         </button>
-                                    </div>
-                                      <div className="right-divider" style={{flex:1}}>
+                        </div> */}
+                        <div className="right-divider" style={{ flex: 1 }}>
 
-                                    </div>
-                   </div>
+                        </div>
+                    </div>
                     {thisDish ? (
                         <div
                             className="dish-page-container"
@@ -115,23 +115,23 @@ class DishPage extends React.Component {
                         >
                             <div className="test">
 
-                                    <div className="dish-container">
-                                        <h1 className="dish-name-h1">{thisDish.name}</h1>
-                                        <img
-                                            className="main-dish-image"
-                                            src={thisDish.image}
-                                        />
-                                    </div>
+                                <div className="dish-container">
+                                    <h1 className="dish-name-h1">{thisDish.name}</h1>
+                                    <img
+                                        className="main-dish-image"
+                                        src={thisDish.image}
+                                    />
+                                </div>
 
-                                    <div className="bottom-content-container">
-                                        <ReviewsController reviews={thisDish.reviews} />
-                                    </div>
+                                <div className="bottom-content-container">
+                                    <ReviewsController reviews={thisDish.reviews} />
+                                </div>
                             </div>
                         </div>
 
                     ) : (
-                        <div>Loading...</div>
-                    )}
+                            <div>Loading...</div>
+                        )}
                     <div className="footer">Footer</div>
                 </>
             </StyledDishPage>
