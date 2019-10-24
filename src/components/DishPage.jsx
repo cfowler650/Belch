@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import ReviewsController from "./ReviewsController";
 import StyledDishPage from "../styles/StyledDishPage";
 import axios from "axios";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { fasCoffee } from '@fortawesome/free-solid-svg-icons';
+
+
 
 class DishPage extends React.Component {
     constructor(props) {
@@ -93,17 +97,17 @@ class DishPage extends React.Component {
                         <div className="belch-title-div" style={{ flex: 1 }}>
                             <Link to={'/'}><h1 className="belch-title" style={{paddingLeft: "128px"}}> Belch </h1></Link>
                         </div>
-                        {/* <div className="dish-button-group">
-                            <button onClick={this.handleReturnToMenu}>
-                                Restaurants
-                                        </button>
-                            <button onClick={this.prevDish}>
+                        <div className="menu-btn-div">
+                            <button className="menu-btn" onClick={this.handleReturnToMenu}>
+                                Back To Menu
+                            </button>
+                            {/* <button onClick={this.prevDish}>
                                 Prev Dish
                                         </button>
                             <button onClick={this.nextDish}>
                                 Next Dish
-                                        </button>
-                        </div> */}
+                            </button> */}
+                        </div>
                         <div className="right-divider" style={{ flex: 1 }}>
 
                         </div>
@@ -117,15 +121,35 @@ class DishPage extends React.Component {
 
                                 <div className="dish-container">
                                     <h1 className="dish-name-h1">{thisDish.name}</h1>
-                                    <img
-                                        className="main-dish-image"
-                                        src={thisDish.image}
-                                    />
+                                    <div className="flex-box">
+                                         <div className="left-arrow"  onClick={this.prevDish}style={{color: "white", width: "120px"}}>
+                                            {/* <i class="fa fa-arrow-circle-left" style={{fontSize: "40px"}}></i> */}
+
+                                          </div>
+                                          <div className="left-arrow"  onClick={this.prevDish}style={{color: "white", width: "300px", cursor: "pointer"}}>
+                                            <i class="fa fa-arrow-circle-left" style={{fontSize: "40px"}}></i>
+
+                                          </div>
+                                        <img
+                                            className="main-dish-image"
+                                            src={thisDish.image}
+                                        />
+                                        <div className="right-arrow"  onClick={this.nextDish}style={{color: "white", width: "300px", cursor: "pointer"}}>
+                                            <i class="fa fa-arrow-circle-right" style={{fontSize: "40px"}}></i>
+                                        </div>
+                                         <div className="right-arrow"  onClick={this.nextDish}style={{color: "white", width: "120px"}}>
+                                            {/* <i class="fa fa-arrow-circle-right" style={{fontSize: "40px"}}></i> */}
+                                        </div>
+                                    </div>
                                 </div>
+
+
 
                                 <div className="bottom-content-container">
                                     <ReviewsController reviews={thisDish.reviews} />
                                 </div>
+
+
                             </div>
                         </div>
 

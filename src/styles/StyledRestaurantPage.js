@@ -546,6 +546,34 @@ h1 {
 
 }
 
+.nav-bar{
+        display: flex;
+        top: 0;
+        background: black;
+        // box-shadow: 0 4px 10px -2px #C6961D;
+         position: sticky;
+        top: 0px;
+        height: 300px;
+    }
+
+
+    .nav-flex {
+        display: flex;
+    /* width: 100%; */
+    justify-content: space-between;
+    background: black;
+    padding-left: 128px;
+    padding-top: 1%;
+    }
+
+    .h1-belch {
+        background: black;
+    /* padding: 1% 128px; */
+    color: white;
+    font-size: 22px;
+    /* width: 50px; */
+    width: 100%;
+    }
 .belch-header {
         padding: 1% 0px;
     font-size: 26px;
@@ -594,6 +622,40 @@ h1 {
 
 }
 
+ .belch-title {
+       padding-left: 100px;
+       padding-top: 13px;
+         font-size: 22px;
+        color: white;
+        margin: 0;
+
+ }
+
+.dish-button-group {
+
+    width: 40%;
+    button {
+        width: 140px;
+        height: 45px;
+        font-family: "hind";
+        font-weight: "bold";
+        font-size: 18px;
+        // margin-right: 10px;
+        background: #1D7C7F;
+        border: none;
+        margin-right: 20px;
+        color: white;
+
+
+    }
+
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+
+}
+
 
 .content-diver {
 //    margin-top: 18px;
@@ -618,8 +680,9 @@ margin: 12px 12px 40px 26px;
     background: black;
     color: white;
     font-size: 18px;
-    padding-bottom: 2.5%;
-    width: 400px;
+    // padding-bottom: 2.5%;
+    // width: 400px;
+
 
 }
 

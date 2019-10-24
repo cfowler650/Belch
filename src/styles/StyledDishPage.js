@@ -29,8 +29,6 @@ const StyledDishPage = styled.div`
             border: none;
             margin-right: 20px;
             color: white;
-
-
         }
 
         display: flex;
@@ -95,6 +93,41 @@ const StyledDishPage = styled.div`
         text-align: initial;
     }
 
+
+    .left-arrow {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 3%;
+    }
+
+
+    .menu-btn {
+        background: black;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    }
+    .right-arrow {
+
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 3%;
+
+    }
+
+    .flex-box {
+            display: flex;
+    justify-content: space-evenly;
+    }
+
+
     .test {
         background: url(https://ak6.picdn.net/shutterstock/videos/17127316/thumb/1.jpg);
     background-size: cover;
@@ -102,10 +135,12 @@ const StyledDishPage = styled.div`
 
     .nav-bar{
         display: flex;
-
         top: 0;
         background: black;
         // box-shadow: 0 4px 10px -2px #C6961D;
+         position: sticky;
+        top: 0px;
+        height: 300px;
     }
      .belch-title-div {
         // padding-left: 2%;
@@ -119,6 +154,11 @@ const StyledDishPage = styled.div`
         color: white;
         margin: 0;
 
+    }
+
+    .menu-btn-div {
+        padding-top: 18px;
+    background: black;
     }
 
     p {

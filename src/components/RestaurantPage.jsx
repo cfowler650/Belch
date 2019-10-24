@@ -38,18 +38,39 @@ function RestaurantPage({ match }) {
 
             <div className="nav-container">
                 <div className="nav-1-2" style={{ zIndex: "3" }}>
-                    <div>
-                    <Link to={"/"}> <h1 style={{ background: "black", padding: '1% 128px', color: "white", fontSize: "22px" }}>Belch</h1> </Link>
-                    {/* <div>
-                             <h1 style={{ background: "black", color: "white", paddingTop: "1%", paddingBottom: "0.5%", paddingLeft: "128px", fontSize: "18px" }}>
-                            <input type="text" value={search} onChange={updateSearch} className="search-bar" placeholder="Search" style={{ border: "none" }} />
-                        </h1>
-                    </div> */}
+                    <div className="nav-flex">
+                    <Link to={"/"} style={{flex: 1}}> <h1 className="h1-belch" style={{ background: "black",  color: "white", fontSize: "22px", paddingBottom: "10px" }}>Belch</h1> </Link>
+                    <h1 style={{ background: "black", color: "white", fontSize: "18px", flex: "1" }}>
+                            <input type="text" value={search} onChange={updateSearch} className="search-bar" placeholder="Search for restaurants..." style={{ border: "none" }} />
+                    </h1>
+
+                    <div style={{flex: 1}}>
+                    </div>
+
                    </div>
                 </div>
+                  {/* <div className="nav-bar">
+                        <div className="belch-title-div" style={{ flex: 1 }}>
+                            <Link to={'/'}><h1 className="belch-title" style={{paddingLeft: "128px"}}> Belch </h1></Link>
+                        </div>
+                        <div className="dish-button-group">
+                            <button >
+                                Restaurants
+                                        </button>
+                            <button >
+                                Prev Dish
+                                        </button>
+                            <button>
+                                Next Dish
+                                        </button>
+                        </div>
+                        <div className="right-divider" style={{ flex: 1 }}>
+
+                        </div>
+                    </div> */}
 
                 <div className="img-div" style={{ background: "" }}>
-                    <div className="header-text-div" >
+                    <div className="header-text-div" style={{paddingTop: "3%"}}>
                         <h1 className="welcome-header" style={{ paddingBottom: 0 }}>Where are you eating today?</h1>
                     </div>
                     {/* <img className="header-img" src="https://ak6.picdn.net/shutterstock/videos/17127316/thumb/1.jpg" /> */}

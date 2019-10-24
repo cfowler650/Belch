@@ -9,13 +9,7 @@ function Home(props) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
     const [testdata, setTestdata] = useState({ tester: [] });
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios("/api/users");
-            setTestdata(result.data);
-        };
-        fetchData();
-    }, []);
+
 
     return (
         <StyledHome>
@@ -26,17 +20,13 @@ function Home(props) {
 
                 />
             </div>
-            {/* <LoginModal /> */}
+
             <PostForm />
             <div className="belch-nav-title" style={{paddingLeft: "128px"}}>
                 Belch
             </div>
 
-            {/* <div className="login-nav-title">
 
-
-                Login
-            </div> */}
         </StyledHome>
     );
 }

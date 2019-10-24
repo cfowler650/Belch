@@ -90,7 +90,7 @@ const ReviewsController = ({ reviews }) => {
     return (
         <div className="bottom-content-child">
             <div className="sort-section-container">
-                <h2 className="sort-by" style={{fontSize: "16px"}}>Sort Reviews</h2>
+                <h2 className="sort-by" style={{fontSize: "16px"}}>sort: </h2>
                 <div className="sort-button-group" >
                     <button
                         name="highest"
@@ -101,8 +101,9 @@ const ReviewsController = ({ reviews }) => {
                             color: "white",
                             margin: "0px 0px 0px 10px",
                             fontSize: "14px",
-                            padding: "0px"
+                            padding: "0px",
                             // textTransform: "uppercase"
+                           cursor: "pointer"
 
 
                         }}
@@ -117,7 +118,8 @@ const ReviewsController = ({ reviews }) => {
                             color: "white",
                                 margin: "0px 0px 0px 10px",
                                  fontSize: "14px",
-                                    padding: "0px"
+                                    padding: "0px",
+                                    cursor: "pointer"
                         }}
                         onClick={handleActiveItemClick}
                     >

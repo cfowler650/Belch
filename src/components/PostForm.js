@@ -22,15 +22,8 @@ class PostForm extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
     submitHandler = (e) => {
-        e.preventDefault()
-        console.log(this.state)
-        axios.post('/api/users', this.state)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+
+        return <Redirect to={'/restaurant_page'} />
     }
 
     submitLoginHandler = (e) => {
@@ -87,19 +80,15 @@ class PostForm extends Component {
                                     <h5 className="email-h5">password</h5>
                                     <input className="auth-input-field" type="text" name="password_digest" value={password_digest} onChange={this.changeHandler} />
                                 </div>
-                                <button className="form-button" style={{
-                                    padding: "3%",
-                                    background: "darkblue",
-                                    width: "80%",
-                                    border: "none",
-                                    color: "white",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                    fontFamily: "Hind",
-                                    marginTop: "10px"
 
 
-                                }} type="submit"> Continue </button>
+                                  <div className="guest-button" style={{ width: "80%" }}>
+                                    <Link to={`/restaurant_page`} style={{
+                                        padding: "4%",
+                                        background: "darkblue",
+                                        width: "100%"
+                                    }}>Continue</Link>
+                                </div>
 
 
                                 <div className="guest-button" style={{ width: "80%" }}>
@@ -134,19 +123,14 @@ class PostForm extends Component {
                                         <h5 className="email-h5">password</h5>
                                         <input className="auth-input-field" type="text" name="password_digest" value={password_digest} onChange={this.changeHandler} />
                                     </div>
-                                    <button style={{
-                                        padding: "3%",
+                                      <div className="guest-button" style={{ width: "80%" }}>
+                                    <Link to={`/restaurant_page`} style={{
+                                        padding: "4%",
                                         background: "darkblue",
-                                        width: "80%",
-                                        border: "none",
-                                        color: "white",
-                                        fontSize: "16px",
-                                        fontWeight: "500",
-                                        fontFamily: "Hind",
-                                        marginTop: "10px"
+                                        width: "100%"
+                                    }}>Continue</Link>
+                                </div>
 
-
-                                    }} type="submit"> Continue </button>
 
 
                                     <div className="guest-button" style={{ width: "80%" }}>
