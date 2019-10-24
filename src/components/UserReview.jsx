@@ -17,7 +17,7 @@ const starGenerator = rating => {
                         className={star}
                         aria-hidden="true"
                         style={{ margin: 0, color: "gold" }}
-                        key={Math.random(0, 1000000)} //this doesnt actaully have a unique id yet this just clears console error for now
+                        key={Math.random(0, 1000000)}
                     />
                 );
             })}
@@ -31,7 +31,6 @@ const UserReview = ({ review, author, starCount }) => {
             <img
                 className="avatar-image-review"
                 src="https://react.semantic-ui.com/images/avatar/small/matthew.png"
-
             />
             <div className="review-content" style={{paddingLeft: "24px", height: "100px"}}>
                 <div className="review-text" style={{ fontSize: "14px" }}>

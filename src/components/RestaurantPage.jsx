@@ -1,25 +1,19 @@
-import React, { useContext, useEffect, useState, Component } from "react";
-import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
 import { RestaurantContext } from "../RestaurantContext";
 import { Link } from "react-router-dom";
 import StyledRestaurantPage from "../styles/StyledRestaurantPage";
-import Collapsible from 'react-collapsible';
-
 
 function RestaurantPage({ match }) {
     const [restaurants, setRestaurants] = useContext(RestaurantContext);
     const [selectedRestaurant, setselectedRestaurant] = useState(false);
     const [selectedResMenu, setselectedResMenu] = useState([]);
     const [search, setSearch] = useState('')
-    // const [firstRender, setFirstRender] = useState(true);
-    console.log(match)
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);
 
     const handleClick = (target) => {
-        // setFirstRender(false)
         setselectedRestaurant(target)
         setselectedResMenu(target.menuItems)
     }
@@ -39,9 +33,11 @@ function RestaurantPage({ match }) {
             <div className="nav-container">
                 <div className="nav-1-2" style={{ zIndex: "3" }}>
                     <div className="nav-flex">
+
                     <Link to={"/"} style={{flex: 1}}> <h1 className="h1-belch" style={{ background: "black",  color: "white", fontSize: "22px", paddingBottom: "10px" }}>Belch</h1> </Link>
+
                     <h1 style={{ background: "black", color: "white", fontSize: "18px", flex: "1" }}>
-                            <input type="text" value={search} onChange={updateSearch} className="search-bar" placeholder="Search for restaurants..." style={{ border: "none" }} />
+                         <input type="text" value={search} onChange={updateSearch} className="search-bar" placeholder="Search for restaurants..." style={{ border: "none" }} />
                     </h1>
 
                     <div style={{flex: 1}}>
@@ -49,31 +45,11 @@ function RestaurantPage({ match }) {
 
                    </div>
                 </div>
-                  {/* <div className="nav-bar">
-                        <div className="belch-title-div" style={{ flex: 1 }}>
-                            <Link to={'/'}><h1 className="belch-title" style={{paddingLeft: "128px"}}> Belch </h1></Link>
-                        </div>
-                        <div className="dish-button-group">
-                            <button >
-                                Restaurants
-                                        </button>
-                            <button >
-                                Prev Dish
-                                        </button>
-                            <button>
-                                Next Dish
-                                        </button>
-                        </div>
-                        <div className="right-divider" style={{ flex: 1 }}>
-
-                        </div>
-                    </div> */}
 
                 <div className="img-div" style={{ background: "" }}>
                     <div className="header-text-div" style={{paddingTop: "3%"}}>
                         <h1 className="welcome-header" style={{ paddingBottom: 0 }}>Where are you eating today?</h1>
                     </div>
-                    {/* <img className="header-img" src="https://ak6.picdn.net/shutterstock/videos/17127316/thumb/1.jpg" /> */}
                     <div className="testing">
                         <img className="header-img" src="https://images.unsplash.com/photo-1473993493174-19f58d45cb13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80" />
                     </div>
@@ -82,20 +58,11 @@ function RestaurantPage({ match }) {
                 <div className="nav-container" style={{ zIndex: "2", position: "relative" }}>
                     <div className="nav-main">
                          <h1 style={{ background: "black", color: "white", paddingTop: "2%", paddingBottom: "0.5%", paddingLeft: "128px", fontSize: "24px" }}>Restaurants</h1>
-
-                        {/* <h1 style={{ background: "black", color: "white", paddingTop: "1%", paddingBottom: "", paddingLeft: "128px", fontSize: "18px" }}>
-                            <input type="text" value={search} onChange={updateSearch} className="search-bar" placeholder="Search" style={{ border: "none" }} />
-                        </h1> */}
                     </div>
 
                     <div className="outer-container">
-
-
-
                         <div className="inner-container">
                             <div className="flex-container" >
-
-
                                 {filteredRestaurants.map(restaurant => (
 
                                     <div onClick={() => handleClick(restaurant)}>
@@ -122,162 +89,12 @@ function RestaurantPage({ match }) {
                                     </div>
 
                                 ))}
-
-
                             </div>
                         </div>
                     </div>
-                    {/* {filteredRestaurants.map(restaurant => (
-
-                        <div onClick={() => handleClick(restaurant)} className="restaurant-card" key={restaurant.id} style={{ cursor: "pointer" }}>
-
-                            <div className="restaurant-content" >
-                                <div className="restaurant-name-top">
-                                    <div className="top-left-divider" style={{ flex: 1 }}></div>
-                                    <div className="restaurant-name-top-header">
-                                        <Link style={{}} to={`/restaurant_page/${restaurant.id}`}>{restaurant.name}
-                                        </Link>
-                                    </div>
-
-                                    <h2 className="restaurant-price"> $$ </h2>
-                                </div>
-
-                                <div className="restaurant-inner-content">
-                                    <div>
-                                        <h3 className="restaurant-cuisine-text">{restaurant.cuisine}</h3>
-                                    </div>
-                                    <div style={{ display: "flex", justifyContent: "space-between", }}>
-                                        <Link style={{ color: "black", paddingBottom: "1%" }} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
-                                            <h3 className="restaurant-reviews-text">{restaurant.total_reviews} Reviews</h3>
-                                        </Link>
-                                    </div>
-
-                                    <Collapsible triggerStyle={{
-                                        display: "flex", alignItems: "flex-end", flexDirection: "column", fontSize: "18px", paddingRight: "2%",
-                                        width: "100%", paddingBottom: "0.5%", paddingTop: "0.5%", background: "#d7ddde"
-                                    }} trigger="Best Dishes">
-                                        <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
-
-                                            <div className="menu-item-list-container" >
-                                                {restaurant.menuItems.slice(0, 3).map(menuItem => (
-                                                    <div className="menu-item-card" style={{ width: "100%" }} key={menuItem.id}>
-                                                        <div className="menu-item-card-content" >
-                                                            <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image} /></div>
-                                                            <div className="menu-item-card-details" style={{ marginRight: "23px", paddingLeft: "20px" }}>
-                                                                <Link style={{ color: "white" }} to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" >{menuItem.name} </p> </Link>
-                                                                <div className="menu-item-card-description" >
-                                                                    {menuItem.description.substr(0, 123)}..
-                                                                    //
-                                                                        </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                ))}
-
-                                            </div>
-
-                                        </div>
-                                    </Collapsible>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    ))} */}
                 </div>
-
             </div>
 
-
-
-
-
-
-
-
-            {/* <div className="main-div">
-                <div className="nav">
-                    <Link to={'/'} style={{ color: "white" }}><h1> Belch </h1></Link>
-                </div>
-                <div className="global">
-                    <div className="header">
-                        <div className="top-content">
-
-                            <div>
-                                <h1 className="welcome-header">Where are you eating today?</h1>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="bottom-content">
-                        <div className="search-bar">
-                            <div>
-                                <div className="restaurant-h1">
-                                    <input type="text" value={search} onChange={updateSearch} className="restaurant-h1" placeholder="Search" style={{ fontSize: "26px", margin: 0, padding: 0, border: "none" }} />
-                                </div>
-
-                                {filteredRestaurants.map(restaurant => (
-
-                                    <div onClick={() => handleClick(restaurant)} className="restaurant-card" key={restaurant.id} style={{ cursor: "pointer" }}>
-
-                                        <div className="restaurant-content" >
-                                            <div className="restaurant-name-top">
-                                                <div className="top-left-divider" style={{ flex: 1 }}></div>
-                                                <div className="restaurant-name-top-header">
-                                                    <Link style={{}} to={`/restaurant_page/${restaurant.id}`}>{restaurant.name}
-                                                    </Link>
-                                                </div>
-
-                                                <h2 className="restaurant-price"> $$ </h2>
-                                            </div>
-
-                                            <div className="restaurant-inner-content">
-                                                <div>
-                                                    <h3 className="restaurant-cuisine-text">{restaurant.cuisine}</h3>
-                                                </div>
-                                                <div style={{ display: "flex", justifyContent: "space-between", }}>
-                                                    <Link style={{ color: "black", paddingBottom: "1%" }} to={`/restaurant_page/${restaurant.id}/${restaurant.menuItems[0].id}`}>
-                                                        <h3 className="restaurant-reviews-text">{restaurant.total_reviews} Reviews</h3>
-                                                    </Link>
-                                                </div>
-
-                                                <Collapsible triggerStyle={{
-                                                    display: "flex", alignItems: "flex-end", flexDirection: "column", fontSize: "18px", paddingRight: "2%",
-                                                    width: "100%", paddingBottom: "0.5%", paddingTop: "0.5%", background: "#d7ddde"
-                                                }} trigger="Best Dishes">
-                                                    <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
-
-                                                        <div className="menu-item-list-container" >
-                                                            {restaurant.menuItems.slice(0, 3).map(menuItem => (
-                                                                <div className="menu-item-card" style={{ width: "100%" }} key={menuItem.id}>
-                                                                    <div className="menu-item-card-content" >
-                                                                        <div className="menu-item-card-image-div"><img className="menu-item-card-image" src={menuItem.image} /></div>
-                                                                        <div className="menu-item-card-details" style={{ marginRight: "23px", paddingLeft: "20px" }}>
-                                                                            <Link style={{ color: "white" }} to={`/restaurant_page/${restaurant.id}/${menuItem.id}`}> <p className="menu-item-card-name" >{menuItem.name} </p> </Link>
-                                                                            <div className="menu-item-card-description" >
-                                                                                {menuItem.description.substr(0, 123)}..
-                                                                                //
-                                                                        </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            ))}
-
-                                                        </div>
-
-                                                    </div>
-                                                </Collapsible>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </StyledRestaurantPage>
     );
 }

@@ -5,7 +5,6 @@ const ReviewsController = ({ reviews }) => {
     const [reviewsProps, setReviewsProps] = useState(reviews);
     const [activeItem, setActiveItem] = useState("highest");
 
-    //rerenders ui to display props when props change
     useEffect(() => {
         setReviewsProps(reviews);
     }, [reviews]);
@@ -96,16 +95,11 @@ const ReviewsController = ({ reviews }) => {
                         name="highest"
                         onClick={handleActiveItemClick}
                         style={{
-                            // padding: "0 1%",
-                            // textDecoration: "underline",
                             color: "white",
                             margin: "0px 0px 0px 10px",
                             fontSize: "14px",
                             padding: "0px",
-                            // textTransform: "uppercase"
-                           cursor: "pointer"
-
-
+                            cursor: "pointer"
                         }}
                     >
                         highest
@@ -114,12 +108,11 @@ const ReviewsController = ({ reviews }) => {
                     <button
                         name="lowest"
                         style={{
-                            // textDecoration: "underline",
                             color: "white",
-                                margin: "0px 0px 0px 10px",
-                                 fontSize: "14px",
-                                    padding: "0px",
-                                    cursor: "pointer"
+                            margin: "0px 0px 0px 10px",
+                            fontSize: "14px",
+                            padding: "0px",
+                            cursor: "pointer"
                         }}
                         onClick={handleActiveItemClick}
                     >

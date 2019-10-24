@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect } from "react-router-dom";
 
-
 class PostForm extends Component {
 
     constructor(props) {
@@ -21,14 +20,13 @@ class PostForm extends Component {
     changeHandler = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
-    submitHandler = (e) => {
 
+    submitHandler = (e) => {
         return <Redirect to={'/restaurant_page'} />
     }
 
     submitLoginHandler = (e) => {
         e.preventDefault()
-        console.log(this.state)
         axios.get('/api/users/1', this.state)
             .then(response => {
                 this.setState({ response: true })
@@ -40,9 +38,9 @@ class PostForm extends Component {
 
 
     redirect_to_restaurant_page = () => {
-        console.log("redirected")
         return <Redirect to={'/restaurant_page'} />
     }
+
     handleUserStatus = (e) => {
         e.preventDefault()
         this.setState({ newUser: !this.state.newUser })
@@ -58,52 +56,47 @@ class PostForm extends Component {
                     :
                     <div className="bg-text" style={{ display: "flex", flexDirection: "column" }}>
 
-                        {this.state.newUser ? <div>
+                        {this.state.newUser ?
 
-                            <h2 className="sign-up-header">Create an account</h2>
+                            <div>
 
+                                <h2 className="sign-up-header">Create an account</h2>
 
-                            <form className="login-container" onSubmit={this.submitHandler}>
-                                <div style={{ width: "80%" }}>
-                                    <h5 className="email-h5">Email</h5>
-                                    <input className="auth-input-field" type="text" name="email" value={email} onChange={this.changeHandler} />
-                                </div>
-                                <div style={{ width: "80%" }}>
-                                    <h5 className="email-h5">username</h5>
-                                    <input className="auth-input-field" type="text" name="username" value={username} onChange={this.changeHandler} />
-                                </div>
-                                <div style={{ width: "80%" }}>
-                                    <h5 className="email-h5">full name</h5>
-                                    <input className="auth-input-field" type="text" name="name" value={name} onChange={this.changeHandler} />
-                                </div>
-                                <div style={{ width: "80%" }}>
-                                    <h5 className="email-h5">password</h5>
-                                    <input className="auth-input-field" type="text" name="password_digest" value={password_digest} onChange={this.changeHandler} />
-                                </div>
+                                <form className="login-container" onSubmit={this.submitHandler}>
+                                    <div style={{ width: "80%" }}>
+                                        <h5 className="email-h5">Email</h5>
+                                        <input className="auth-input-field" type="text" name="email" value={email} onChange={this.changeHandler} />
+                                    </div>
+                                    <div style={{ width: "80%" }}>
+                                        <h5 className="email-h5">username</h5>
+                                        <input className="auth-input-field" type="text" name="username" value={username} onChange={this.changeHandler} />
+                                    </div>
+                                    <div style={{ width: "80%" }}>
+                                        <h5 className="email-h5">full name</h5>
+                                        <input className="auth-input-field" type="text" name="name" value={name} onChange={this.changeHandler} />
+                                    </div>
+                                    <div style={{ width: "80%" }}>
+                                        <h5 className="email-h5">password</h5>
+                                        <input className="auth-input-field" type="text" name="password_digest" value={password_digest} onChange={this.changeHandler} />
+                                    </div>
+                                    <div className="guest-button" style={{ width: "80%" }}>
+                                        <Link to={`/restaurant_page`} style={{
+                                            padding: "4%",
+                                            background: "darkblue",
+                                            width: "100%"
+                                        }}>Continue</Link>
+                                    </div>
+                                    <div className="guest-button" style={{ width: "80%" }}>
+                                        <Link to={`/restaurant_page`} style={{
+                                            padding: "4%",
+                                            background: "#222",
+                                            width: "100%"
+                                        }}>Continue as guest</Link>
+                                    </div>
+                                    <p>Already a member? <a onClick={this.handleUserStatus}>Click here.</a></p>
+                                </form>
 
-
-                                  <div className="guest-button" style={{ width: "80%" }}>
-                                    <Link to={`/restaurant_page`} style={{
-                                        padding: "4%",
-                                        background: "darkblue",
-                                        width: "100%"
-                                    }}>Continue</Link>
-                                </div>
-
-
-                                <div className="guest-button" style={{ width: "80%" }}>
-                                    <Link to={`/restaurant_page`} style={{
-                                        padding: "4%",
-                                        background: "#222",
-                                        width: "100%"
-                                    }}>Continue as guest...</Link>
-                                </div>
-
-
-                                <p>Already a member? <a onClick={this.handleUserStatus}>Click here.</a></p>
-                            </form>
-
-                        </div>
+                            </div>
 
                             :
 
@@ -123,29 +116,29 @@ class PostForm extends Component {
                                         <h5 className="email-h5">password</h5>
                                         <input className="auth-input-field" type="text" name="password_digest" value={password_digest} onChange={this.changeHandler} />
                                     </div>
-                                      <div className="guest-button" style={{ width: "80%" }}>
-                                    <Link to={`/restaurant_page`} style={{
-                                        padding: "4%",
-                                        background: "darkblue",
-                                        width: "100%"
-                                    }}>Continue</Link>
-                                </div>
 
-
+                                    <div className="guest-button" style={{ width: "80%" }}>
+                                        <Link to={`/restaurant_page`} style={{
+                                            padding: "4%",
+                                            background: "darkblue",
+                                            width: "100%"
+                                        }}>Continue</Link>
+                                    </div>
 
                                     <div className="guest-button" style={{ width: "80%" }}>
                                         <Link to={`/restaurant_page`} style={{
                                             padding: "4%",
                                             background: "#222",
                                             width: "100%"
-                                        }}>Continue as guest...</Link>
+                                        }}>Continue as guest</Link>
                                     </div>
-
 
                                     <p>Not a member? <a onClick={this.handleUserStatus}> Click here to sign up. </a></p>
                                 </form>
 
-                            </div>}
+                            </div>
+                        }
+
                     </div>
                 }
             </>

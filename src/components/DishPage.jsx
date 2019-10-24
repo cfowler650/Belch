@@ -1,13 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
-import { RestaurantContext } from "../RestaurantContext";
+import React from "react";
 import { Link } from "react-router-dom";
 import ReviewsController from "./ReviewsController";
 import StyledDishPage from "../styles/StyledDishPage";
 import axios from "axios";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { fasCoffee } from '@fortawesome/free-solid-svg-icons';
-
-
 
 class DishPage extends React.Component {
     constructor(props) {
@@ -24,7 +19,7 @@ class DishPage extends React.Component {
     }
 
     handleFetch(firstRender) {
-        if (firstRender != false) {
+        if (firstRender !== false) {
             axios
                 .get(
                     `/api/restaurants/${this.props.match.params.restaurantId}.json`
@@ -87,8 +82,7 @@ class DishPage extends React.Component {
         const { match, history } = this.props;
         const { dishes } = this.state;
         let thisDish = dishes[this.state.currentDishIDX];
-        console.log("thisDish", thisDish);
-        // console.log(dishes[0]);
+
 
         return (
             <StyledDishPage>
@@ -101,44 +95,30 @@ class DishPage extends React.Component {
                             <button className="menu-btn" onClick={this.handleReturnToMenu}>
                                 Back To Menu
                             </button>
-                            {/* <button onClick={this.prevDish}>
-                                Prev Dish
-                                        </button>
-                            <button onClick={this.nextDish}>
-                                Next Dish
-                            </button> */}
                         </div>
                         <div className="right-divider" style={{ flex: 1 }}>
-
                         </div>
                     </div>
                     {thisDish ? (
-                        <div
-                            className="dish-page-container"
-                            style={{ textAlign: "center" }}
-                        >
+                        <div className="dish-page-container" style={{ textAlign: "center" }}>
                             <div className="test">
 
                                 <div className="dish-container">
                                     <h1 className="dish-name-h1">{thisDish.name}</h1>
                                     <div className="flex-box">
-                                         <div className="left-arrow"  onClick={this.prevDish}style={{color: "white", width: "120px"}}>
-                                            {/* <i class="fa fa-arrow-circle-left" style={{fontSize: "40px"}}></i> */}
-
+                                         <div className="left-arrow" style={{color: "white", width: "120px"}}>
                                           </div>
                                           <div className="left-arrow"  onClick={this.prevDish}style={{color: "white", width: "300px", cursor: "pointer"}}>
-                                            <i class="fa fa-arrow-circle-left" style={{fontSize: "40px"}}></i>
-
+                                            <i className="fa fa-arrow-circle-left" style={{fontSize: "40px"}}></i>
                                           </div>
                                         <img
                                             className="main-dish-image"
                                             src={thisDish.image}
                                         />
                                         <div className="right-arrow"  onClick={this.nextDish}style={{color: "white", width: "300px", cursor: "pointer"}}>
-                                            <i class="fa fa-arrow-circle-right" style={{fontSize: "40px"}}></i>
+                                            <i className="fa fa-arrow-circle-right" style={{fontSize: "40px"}}></i>
                                         </div>
-                                         <div className="right-arrow"  onClick={this.nextDish}style={{color: "white", width: "120px"}}>
-                                            {/* <i class="fa fa-arrow-circle-right" style={{fontSize: "40px"}}></i> */}
+                                         <div className="right-arrow" style={{color: "white", width: "120px"}}>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +134,10 @@ class DishPage extends React.Component {
                         </div>
 
                     ) : (
-                            <div>Loading...</div>
+
+
+                         <div>Loading...</div>
+
                         )}
                     <div className="footer">Footer</div>
                 </>
@@ -163,91 +146,5 @@ class DishPage extends React.Component {
     }
 }
 
-// function DishPage({ match, history }) {
-//     const [restaurants, setRestaurants] = useContext(RestaurantContext);
-//     const [newRestaurants, setNewRestaurants] = useState([]);
-
-//     useEffect(async () => {
-//         const response = await fetch(`/api/restaurants/1`);
-//         const data = await response.json();
-//         const data2 = data;
-//         setNewRestaurants(data2);
-//     }, []);
-
-//     const API = `/api/restaurants/${match.params.restaurantId}.json`;
-//     useEffect(() => {
-//         const fetchData = async () => {
-//             const result = await axios(API);
-//             console.log("datainsideuseeffect", result.data);
-//             setNewRestaurants(result.data);
-//         };
-//         fetchData();
-//     }, []);
-
-//     console.log("newRest", newRestaurants);
-
-//     const [currentDishIndex, setcurrentDishIndex] = useState(initState());
-
-//     const nextDish = () => {
-//         if (currentDishIndex != menu.length - 1) {
-//             setcurrentDishIndex(currentDishIndex + 1);
-//         }
-//     };
-
-//     const prevDish = () => {
-//         if (currentDishIndex != 0) {
-//             setcurrentDishIndex(currentDishIndex - 1);
-//         }
-//     };
-
-//     const handleReturnToMenu = () => {
-//         history.goBack();
-//     };
-
-//     let thisDish = menu[currentDishIndex];
-
-//     let thisDish = newRestaurants.menuItems
-//         ? newRestaurants.menuItems[currentDishIndex]
-//         : false;
-
-//     return (
-//         <StyledDishPage>
-//             <div
-//                 className="dish-page-container"
-//                 style={{ textAlign: "center" }}
-//             >
-//                 <div className="dish-button-group">
-//                     <button onClick={handleReturnToMenu}>Menu</button>
-//                     <button onClick={prevDish}>Prev Dish</button>
-//                     <button onClick={nextDish}>Next Dish</button>
-//                 </div>
-
-//                 {newRestaurants.menuItems ? (
-//                     <>
-//                         <div className="dish-container">
-//                             <h1>{thisDish.name}</h1>
-//                             <img
-//                                 className="main-dish-image"
-//                                 src={thisDish.image}
-//                             />
-//                         </div>
-
-//                         <div className="bottom-content-container">
-//                             <ReviewsController reviews={thisDish.reviews} />
-//                         </div>
-//                     </>
-//                 ) : (
-//                     <div></div>
-//                 )}
-//             </div>
-
-//             <div>
-//                 {newRestaurants.menuItems
-//                     ? newRestaurants.menuItems[0].name
-//                     : console.log("i am not yetundefined")}
-//             </div>
-//         </StyledDishPage>
-//     );
-// }
 
 export default DishPage;

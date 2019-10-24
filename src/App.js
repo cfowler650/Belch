@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 
 //plugins
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
@@ -10,7 +9,6 @@ import RestaurantPage from "./components/RestaurantPage";
 import RestaurantMenuPage from "./components/RestaurantMenuPage";
 import { RestaurantProvider } from "./RestaurantContext";
 import DishPage from "./components/DishPage";
-import Nav from "./components/Nav";
 import GlobalStyle from "./styles/GlobalStyle";
 
 class App extends React.Component {
@@ -19,7 +17,6 @@ class App extends React.Component {
             <Router>
                 <RestaurantProvider>
                     <div className="App">
-                        {/* <Nav /> */}
                         <Switch>
                             <Route exact path="/" component={Home} />
 
