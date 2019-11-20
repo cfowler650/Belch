@@ -7,6 +7,5 @@ Belch is a web app inspired by yelp that serves as a solution for the paradox of
 [View Live Project - Click Here](https://test-rails-app-belch.herokuapp.com/).
 
 
-View Back End Belch Code:
 [View Back End Code - Click Here](https://github.com/cfowler650/BelchFS/)
 
